@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 11
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -30,8 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 11
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -43,9 +39,9 @@ jobs:
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
-          SOURCE: "build/"
+          ARGS: '-rlgoDzvc -i --delete'
+          SOURCE: 'build/'
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_PORT: ${{ secrets.VPS_PORT || '2222' }}
           REMOTE_USER: ${{ secrets.VPS_USER || 'admin' }}
-          TARGET: "/var/www/kancilsapa.com/releases/init/"
+          TARGET: '/var/www/kancilsapa.com/releases/init/'
