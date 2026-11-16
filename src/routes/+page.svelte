@@ -72,8 +72,6 @@
 <Seo {title} {description} path="/" jsonLd={[service]} />
 
 <section class="hero">
-	<div class="hero__glow hero__glow--a"></div>
-	<div class="hero__glow hero__glow--b"></div>
 	<div class="container hero__grid">
 		<div class="hero__text">
 			<h1>Layanan imigrasi Cilacap, lewat WhatsApp</h1>
@@ -87,12 +85,134 @@
 				<li>Petugas {site.hours.staff}</li>
 			</ul>
 		</div>
-		<div class="phone">
-			<div class="phone__bar">
-				<img src={logo} width="36" height="36" alt="" />
-				<span>KANCIL SAPA</span>
+		<div class="phone" aria-label="Pratinjau chat WhatsApp KANCIL SAPA">
+			<div class="phone__screen">
+				<div class="wa-head">
+					<svg
+						class="wa-head__back"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M19 12H5" />
+						<path d="m12 19-7-7 7-7" />
+					</svg>
+					<span class="wa-head__avatar">
+						<img src={logo} width="34" height="34" alt="" />
+					</span>
+					<div class="wa-head__info">
+						<span class="wa-head__name">
+							KANCIL SAPA
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366" aria-hidden="true">
+								<circle cx="12" cy="12" r="10" />
+								<path
+									d="m8.5 12.2 2.3 2.3 4.7-4.8"
+									fill="none"
+									stroke="#ffffff"
+									stroke-width="2.2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</span>
+						<span class="wa-head__status">Akun Resmi</span>
+					</div>
+					<div class="wa-head__icons" aria-hidden="true">
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+							/>
+						</svg>
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+							<circle cx="12" cy="5" r="1.7" />
+							<circle cx="12" cy="12" r="1.7" />
+							<circle cx="12" cy="19" r="1.7" />
+						</svg>
+					</div>
+				</div>
+				<ChatSample note={false} />
+				<div class="wa-compose" aria-hidden="true">
+					<div class="wa-compose__input">
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.9"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<circle cx="12" cy="12" r="10" />
+							<path d="M8 14s1.5 2 4 2 4-2 4-2" />
+							<line x1="9" y1="9" x2="9.01" y2="9" />
+							<line x1="15" y1="9" x2="15.01" y2="9" />
+						</svg>
+						<span>Ketik pesan</span>
+						<svg
+							class="wa-compose__clip"
+							width="17"
+							height="17"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.9"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"
+							/>
+						</svg>
+						<svg
+							width="17"
+							height="17"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.9"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+							/>
+							<circle cx="12" cy="13" r="3" />
+						</svg>
+					</div>
+					<span class="wa-compose__mic">
+						<svg
+							width="17"
+							height="17"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+							<path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+							<line x1="12" y1="19" x2="12" y2="22" />
+						</svg>
+					</span>
+				</div>
 			</div>
-			<ChatSample note={false} />
 		</div>
 	</div>
 </section>

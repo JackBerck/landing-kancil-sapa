@@ -18,27 +18,22 @@ body {
 	display: contents;
 }
 
-/* tints: one pale plastic colour per topic */
-.tint-1 {
-	--tint: var(--p-thu);
-}
-.tint-2 {
-	--tint: var(--p-wed);
-}
-.tint-3 {
-	--tint: var(--p-fri);
-}
-.tint-4 {
-	--tint: var(--p-sun);
-}
-.tint-5 {
-	--tint: var(--p-tue);
-}
-.tint-6 {
-	--tint: var(--p-sat);
-}
+/* tints: selaras warna logo (putih, biru lembut, emas hangat) */
+.tint-1,
+.tint-4,
 .tint-7 {
-	--tint: var(--p-mon);
+	--tint: #ffffff;
+	--tint-border: var(--color-rule);
+}
+.tint-2,
+.tint-5 {
+	--tint: var(--color-accent-soft);
+	--tint-border: #c9d8ee;
+}
+.tint-3,
+.tint-6 {
+	--tint: var(--color-gold-soft);
+	--tint-border: var(--color-gold-rule);
 }
 
 /* ---------- skip link and header ---------- */
@@ -243,30 +238,30 @@ body {
 .btn--primary {
 	background: var(--color-accent);
 	color: var(--color-accent-ink);
-	box-shadow:
-		inset 0 1px 0 color-mix(in oklab, var(--glint) 45%, transparent),
-		0 3px 0 var(--color-accent-deep),
-		0 10px 18px -8px color-mix(in oklab, var(--color-accent) 60%, transparent);
+	border-color: var(--color-accent);
+	box-shadow: var(--shadow-card);
 }
 .btn--primary:hover {
 	background: var(--color-accent-deep);
+	border-color: var(--color-accent-deep);
 }
 .btn--primary:active {
-	transform: translateY(3px);
-	box-shadow: inset 0 1px 0 color-mix(in oklab, var(--glint) 45%, transparent);
+	transform: translateY(1px);
+	box-shadow: none;
 }
 .btn--secondary {
 	background: var(--glint);
 	border-color: var(--color-rule);
 	color: var(--color-ink);
-	box-shadow: 0 3px 0 var(--color-rule);
+	box-shadow: var(--shadow-card);
 }
 .btn--secondary:hover {
-	border-color: var(--color-accent);
-	color: var(--color-accent-deep);
+	border-color: var(--color-gold);
+	background: var(--color-gold-soft);
+	color: var(--color-ink);
 }
 .btn--secondary:active {
-	transform: translateY(3px);
+	transform: translateY(1px);
 	box-shadow: none;
 }
 .actions {
@@ -286,15 +281,14 @@ body {
 
 /* ---------- surfaces ---------- */
 .plastic {
-	background: color-mix(in oklab, var(--tint, var(--p-thu)) 62%, var(--color-paper));
+	background: var(--tint, #ffffff);
+	border: var(--rule-hair) solid var(--tint-border, var(--color-rule));
 	border-radius: var(--radius-card);
-	box-shadow:
-		inset 0 1px 0 var(--glint),
-		inset 0 -14px 22px -16px color-mix(in oklab, var(--tint, var(--p-thu)) 80%, var(--color-ink)),
-		var(--shadow-card);
+	box-shadow: var(--shadow-card);
 }
 .sheet {
 	background: var(--glint);
+	border: var(--rule-hair) solid var(--color-rule);
 	border-radius: var(--radius-card);
 	box-shadow: var(--shadow-card);
 }
@@ -349,30 +343,12 @@ body {
 	overflow: clip;
 	isolation: isolate;
 	padding-block: var(--space-2xl) var(--space-3xl);
-}
-.hero__glow {
-	position: absolute;
-	z-index: -1;
-	inline-size: 38rem;
-	block-size: 24rem;
-	border-radius: var(--radius-pill);
-	filter: blur(90px);
-	opacity: 0.7;
-	pointer-events: none;
-}
-.hero__glow--a {
-	inset-block-start: -6rem;
-	inset-inline-end: -8rem;
-	background: var(--p-thu);
-}
-.hero__glow--b {
-	inset-block-end: -4rem;
-	inset-inline-start: -10rem;
-	background: var(--p-wed);
+	background: #ffffff;
+	border-block-end: var(--rule-hair) solid var(--color-rule);
 }
 .hero__grid {
 	display: grid;
-	grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+	grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
 	gap: var(--space-2xl);
 	align-items: center;
 }
@@ -403,10 +379,10 @@ body {
 }
 .hero__note li::before {
 	content: '';
-	inline-size: 10px;
-	block-size: 10px;
+	inline-size: 9px;
+	block-size: 9px;
 	border-radius: var(--radius-pill);
-	background: var(--color-accent);
+	background: var(--color-gold);
 	flex: none;
 }
 @media (max-width: 60rem) {
@@ -422,61 +398,209 @@ body {
 	}
 }
 
-/* phone with the real bot menu */
+/* phone: tampilan WhatsApp asli */
 .phone {
 	justify-self: center;
-	inline-size: min(100%, 22rem);
-	padding: var(--space-sm);
-	border-radius: var(--radius-big);
-	background: var(--glint);
+	inline-size: min(100%, 22.5rem);
+	padding: 10px;
+	border-radius: 32px;
+	background: #141c28;
 	box-shadow: var(--shadow-lift);
 }
-.phone__bar {
+.phone__screen {
+	overflow: hidden;
+	border-radius: 23px;
+	background: #efeae2;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+.wa-head {
 	display: flex;
 	align-items: center;
-	gap: var(--space-sm);
-	padding: var(--space-sm) var(--space-sm) var(--space-md);
-	font-weight: 700;
+	gap: 8px;
+	padding: 10px 12px;
+	background: #075e54;
+	color: #ffffff;
 }
-.phone__bar img {
+.wa-head__back {
+	flex: none;
+	opacity: 0.95;
+}
+.wa-head__avatar {
+	flex: none;
 	inline-size: 36px;
 	block-size: 36px;
+	border-radius: 50%;
+	background: #ffffff;
+	padding: 2px;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
 }
-.phone .chat {
-	border-radius: calc(var(--radius-big) - var(--space-sm));
+.wa-head__avatar img {
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.wa-head__info {
+	min-width: 0;
+	flex: 1;
+	display: grid;
+	gap: 1px;
+}
+.wa-head__name {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+.wa-head__status {
+	font-size: 0.75rem;
+	line-height: 1.2;
+	color: rgba(255, 255, 255, 0.85);
+}
+.wa-head__icons {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex: none;
+	opacity: 0.92;
 }
 
-/* chat sample */
+/* chat sample (WhatsApp wallpaper & bubbles) */
 .chat {
 	display: grid;
-	gap: var(--space-sm);
-	padding: var(--space-md);
-	background: var(--color-paper-2);
+	gap: 8px;
+	padding: 12px 12px 14px;
 	align-content: start;
-	border-radius: var(--radius-card);
+	background-color: #efeae2;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23000000' stroke-opacity='0.045' stroke-width='1.2'%3E%3Ccircle cx='14' cy='14' r='5'/%3E%3Cpath d='M42 10h12v9H46l-4 3z'/%3E%3Cpath d='M12 48l6-6 6 6'/%3E%3Crect x='42' y='40' width='10' height='10' rx='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+.chat__day {
+	justify-self: center;
+	margin-block-end: 2px;
+}
+.chat__day span {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 7px;
+	background: rgba(255, 255, 255, 0.92);
+	color: #54656f;
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.1);
 }
 .chat__msg {
-	max-inline-size: 92%;
-	padding: var(--space-sm) var(--space-md);
-	border-radius: var(--radius-input);
-	font-size: var(--text-sm);
-	line-height: 1.5;
-	white-space: pre-line;
-}
-.chat__msg--bot {
-	justify-self: start;
-	background: var(--glint);
-	box-shadow: 0 1px 2px color-mix(in oklab, var(--color-ink) 12%, transparent);
+	position: relative;
+	max-inline-size: 88%;
+	padding: 7px 10px 6px;
+	font-size: 0.8125rem;
+	line-height: 1.42;
+	color: #111b21;
+	box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
 }
 .chat__msg--user {
 	justify-self: end;
-	background: var(--color-accent-soft);
+	display: inline-flex;
+	align-items: flex-end;
+	gap: 8px;
+	margin-inline-end: 6px;
+	border-radius: 8px 0 8px 8px;
+	background: #d9fdd3;
 }
-.chat__who {
-	display: block;
-	margin-block-end: var(--space-3xs);
-	font-weight: 700;
-	color: var(--color-accent-deep);
+.chat__msg--user::after {
+	content: '';
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-end: -7px;
+	inline-size: 8px;
+	block-size: 11px;
+	background: #d9fdd3;
+	clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.chat__msg--bot {
+	justify-self: start;
+	margin-inline-start: 6px;
+	border-radius: 0 8px 8px 8px;
+	background: #ffffff;
+}
+.chat__msg--bot::before {
+	content: '';
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: -7px;
+	inline-size: 8px;
+	block-size: 11px;
+	background: #ffffff;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.chat__p {
+	margin: 0;
+}
+.chat__p + .chat__p {
+	margin-block-start: 5px;
+}
+.chat__p--opt {
+	margin-block-start: 2px;
+}
+.chat__msg--bot .chat__meta {
+	display: flex;
+	justify-content: flex-end;
+	margin-block-start: 3px;
+}
+.chat__meta {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	font-size: 0.6875rem;
+	line-height: 1;
+	color: #667781;
+	white-space: nowrap;
+}
+.chat__ticks {
+	flex: none;
+}
+.wa-compose {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 8px 10px;
+	background: #efeae2;
+}
+.wa-compose__input {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 12px;
+	border-radius: 999px;
+	background: #ffffff;
+	color: #667781;
+	font-size: 0.8125rem;
+	box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.08);
+}
+.wa-compose__input span {
+	flex: 1;
+}
+.wa-compose__clip {
+	transform: rotate(-45deg);
+}
+.wa-compose__mic {
+	flex: none;
+	inline-size: 36px;
+	block-size: 36px;
+	border-radius: 50%;
+	background: #00a884;
+	color: #ffffff;
+	display: grid;
+	place-items: center;
+	box-shadow: 0 1px 1px rgba(11, 20, 26, 0.2);
 }
 .chat-note {
 	margin-block-start: var(--space-sm);
@@ -508,9 +632,9 @@ body {
 	inline-size: 52px;
 	block-size: 52px;
 	border-radius: var(--radius-pill);
-	background: var(--glint);
+	background: var(--color-ink);
+	color: #ffffff;
 	font: var(--display-weight) var(--text-xl) / 1 var(--font-display);
-	box-shadow: var(--shadow-card);
 }
 .steps-grid p {
 	color: var(--color-ink-2);
@@ -543,10 +667,10 @@ body {
 	block-size: 64px;
 	border-radius: var(--radius-input);
 	background: var(--glint);
+	border: var(--rule-hair) solid var(--color-rule);
+	color: var(--color-ink);
 	font: var(--display-weight) var(--text-3xl) / 1 var(--font-display);
-	box-shadow:
-		0 3px 0 color-mix(in oklab, var(--tint) 60%, var(--color-ink)),
-		var(--shadow-card);
+	box-shadow: 0 2px 0 var(--color-gold-rule);
 }
 .key p {
 	color: var(--color-ink-2);
@@ -690,8 +814,8 @@ body {
 	padding: var(--space-2xl) var(--space-xl);
 	border-radius: var(--radius-big);
 	background: var(--color-ink);
-	color: var(--color-paper);
-	--color-focus: var(--color-accent-soft);
+	color: #ffffff;
+	--color-focus: var(--color-gold-soft);
 }
 .band h2 {
 	max-width: 22ch;
@@ -699,7 +823,7 @@ body {
 	line-height: 1.05;
 }
 .band p {
-	color: var(--color-accent-soft);
+	color: #e8d8b5;
 	margin-block-start: var(--space-md);
 }
 @media (max-width: 40rem) {
@@ -712,10 +836,9 @@ body {
 .panel {
 	padding: var(--space-2xl) var(--space-xl);
 	border-radius: var(--radius-big);
-	background: color-mix(in oklab, var(--p-thu) 55%, var(--color-paper));
-	box-shadow:
-		inset 0 1px 0 var(--glint),
-		var(--shadow-card);
+	background: var(--color-gold-soft);
+	border: var(--rule-hair) solid var(--color-gold-rule);
+	box-shadow: var(--shadow-card);
 }
 .panel h2 {
 	max-width: none;

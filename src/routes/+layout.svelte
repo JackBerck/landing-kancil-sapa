@@ -54,7 +54,7 @@
 	<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.webmanifest" />
-	<meta name="theme-color" content="#0f7a54" />
+	<meta name="theme-color" content="#0c2042" />
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<script type="application/ld+json">${JSON.stringify(website)}<` + `/script>`}
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
