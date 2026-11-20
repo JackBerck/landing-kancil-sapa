@@ -22,7 +22,7 @@ export const site = {
 	},
 	hours: {
 		bot: '24 jam, setiap hari',
-		staff: 'Senin sampai Jumat, 08.00 sampai 16.00 WIB'
+		staff: 'Senin sampai Kamis 08.00 sampai 16.00 WIB, Jumat 08.00 sampai 16.30 WIB'
 	},
 	lastVerified: '2026-11-16',
 	lastVerifiedLabel: '16 November 2026'

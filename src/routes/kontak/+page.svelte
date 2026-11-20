@@ -9,7 +9,7 @@
 
 	const title = 'Kontak, Alamat, dan Jam Layanan Imigrasi Cilacap | KANCIL SAPA';
 	const description =
-		'Nomor WhatsApp, email, alamat Jl. Urip Sumoharjo No.249 Cilacap, dan jam layanan petugas Senin sampai Jumat 08.00 sampai 16.00 WIB. Bot aktif 24 jam.';
+		'Nomor WhatsApp, email, alamat Jl. Urip Sumoharjo No.249 Cilacap, dan jam layanan petugas Senin sampai Kamis 08.00 sampai 16.00 WIB, Jumat sampai 16.30 WIB. Bot aktif 24 jam.';
 
 	const jsonLd = [
 		{
