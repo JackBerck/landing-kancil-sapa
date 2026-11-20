@@ -24,15 +24,77 @@ export const site = {
 		bot: '24 jam, setiap hari',
 		staff: 'Senin sampai Kamis 08.00 sampai 16.00 WIB, Jumat 08.00 sampai 16.30 WIB'
 	},
-	lastVerified: '2026-11-16',
-	lastVerifiedLabel: '16 November 2026'
+	/** Lokasi layanan paspor lain (sama dengan menu "Lokasi Kami" di bot, feedback Imigrasi 20-21 Nov 2026). */
+	locations: [
+		{
+			name: 'Mal Pelayanan Publik (MPP) Cilacap',
+			address:
+				'Jl. Gatot Subroto No.268 Lantai 2, Karang Lor, Gunungsimping, Kec. Cilacap Tengah, Kabupaten Cilacap, Jawa Tengah 53224',
+			maps: 'https://maps.app.goo.gl/8nMhuDQmjkW56mnE9'
+		},
+		{
+			name: 'Mal Pelayanan Publik (MPP) Banyumas',
+			address:
+				'Jl. Dr. Angka No.45, Karangkobar, Sokanegara, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115',
+			maps: 'https://maps.app.goo.gl/9NsKFWBDHz8kRGRi6'
+		},
+		{
+			name: 'Mal Pelayanan Publik (MPP) Purbalingga',
+			address:
+				'Jl. Raya Mayjen Sungkono No. 16, Selabaya, Kecamatan Kalimanah, Kabupaten Purbalingga, Jawa Tengah 53371',
+			maps: 'https://maps.app.goo.gl/wFeYgwqUDX7Byi31A'
+		}
+	],
+	officeMaps: 'https://maps.app.goo.gl/nsSRkK4pQqpF6rHM6',
+	/** Tempat permohonan pada menu Cek Status Paspor. */
+	applicationPlaces: [
+		'Imigrasi Cilacap',
+		'MPP Banyumas',
+		'MPP Purbalingga',
+		'Ngapak Banyumas',
+		'Ngapak Purbalingga'
+	],
+	sipantasUrl: 'https://sipantas.kanimcilacap.com/',
+	lastVerified: '2026-11-21',
+	lastVerifiedLabel: '21 November 2026'
+} as const;
+
+/**
+ * Menu bot WhatsApp persis seperti yang dikirim bot (BotScript::MENUS di dashboard). Ubah di sini bila menu bot berubah;
+ * dikunci test src/lib/site.test.ts.
+ */
+export const botMenu = {
+	main: [
+		{ digit: '1', label: 'Pelayanan Paspor WNI' },
+		{ digit: '2', label: 'Pelayanan Izin Tinggal (For Foreigners)' },
+		{ digit: '3', label: 'Layanan Pengaduan (Complaint Support)' }
+	],
+	paspor: [
+		'Biaya Paspor',
+		'Persyaratan Paspor Baru',
+		'Persyaratan Penggantian Paspor',
+		'Persyaratan Paspor Anak',
+		'Pendaftaran Paspor (M-Paspor)',
+		'Layanan Prioritas Ramah HAM',
+		'Permohonan Paspor Hilang',
+		'Permohonan Paspor Rusak',
+		'Permohonan Paspor Beda Data',
+		'Penambahan Nama pada Paspor',
+		'Cek Status Paspor',
+		'Kembali ke menu sebelumnya'
+	],
+	izinTinggal: [
+		'Tarif Izin Tinggal dan Visa (Stay Permit & Visa Fees)',
+		'Pelaporan WNA Meninggal (Death Report of a Foreigner)',
+		'Lokasi Kami (Our Locations)',
+		'Kembali ke menu sebelumnya'
+	]
 } as const;
 
 export const addressLine = `${site.address.street}, ${site.address.area}, ${site.address.district}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`;
 
-export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-	`${site.office}, ${addressLine}`
-)}`;
+/** Tautan peta resmi kantor (sama dengan bot). */
+export const mapsUrl = site.officeMaps;
 
 export function waUrl(number: string, text = 'Halo'): string {
 	return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;

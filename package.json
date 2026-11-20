@@ -20,8 +20,10 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run",
 		"faq:doc": "node scripts/faq-from-doc.mjs",
+		"faq:sync": "node scripts/faq-from-laravel.mjs",
 		"assets": "node scripts/make-assets.mjs",
-		"lint:design": "node ~/.agents/skills/hallmark/scripts/sloplint.mjs src/routes/app.css src/lib/styles --genre editorial"
+		"lint:design": "node ~/.agents/skills/hallmark/scripts/sloplint.mjs src/routes/app.css src/lib/styles --genre editorial",
+		"test:build": "node scripts/check-build.mjs"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

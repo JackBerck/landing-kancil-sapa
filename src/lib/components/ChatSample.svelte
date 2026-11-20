@@ -1,30 +1,20 @@
 <script lang="ts">
+	import { botMenu, site } from '#lib/site';
+
 	let { note = true }: { note?: boolean } = $props();
+
+	type Line = { text: string; digit?: string };
+
+	// Menu utama persis seperti yang dikirim bot (sapaan, status hari ini, pilihan).
+	const lines: Line[] = [
+		{ text: 'Silakan pilih menu di bawah ini:' },
+		...botMenu.main.map((m) => ({ digit: m.digit, text: m.label })),
+		{ text: 'Ketik angka pilihan Anda, lalu ikuti petunjuk selanjutnya' }
+	];
 
 	const messages = [
 		{ from: 'user', time: '09.14', text: 'Halo' },
-		{
-			from: 'bot',
-			time: '09.14',
-			parts: [
-				{
-					text: 'Selamat datang di layanan WhatsApp ',
-					bold: false
-				},
-				{
-					text: 'Kantor Imigrasi Kelas I TPI Cilacap.',
-					bold: true
-				}
-			],
-			lines: [
-				'Silakan pilih layanan dengan mengetik angka:',
-				'0 = Warga Negara Indonesia (WNI)',
-				'1 = Warga Negara Asing (WNA)',
-				'2 = Pengaduan',
-				'3 = Hubungi Petugas',
-				'Ketik *88* kapan saja untuk menghubungi petugas.'
-			]
-		}
+		{ from: 'bot', time: '09.14', text: '' }
 	] as const;
 </script>
 
@@ -33,16 +23,17 @@
 	{#each messages as m, i (i)}
 		<div class="chat__msg chat__msg--{m.from}">
 			{#if m.from === 'bot'}
+				<p class="chat__p">Selamat Pagi, Halo</p>
 				<p class="chat__p">
-					{#each m.parts as p, j (j)}{#if p.bold}<strong>{p.text}</strong
-							>{:else}{p.text}{/if}{/each}
+					Selamat Datang, di Layanan Informasi dan Pengaduan <strong>{site.office}.</strong>
 				</p>
-				{#each m.lines as line, k (k)}
-					<p class="chat__p" class:chat__p--opt={/^\d\s*=/.test(line)}>
-						{#if line.includes('*88*')}
-							Ketik <strong>88</strong> kapan saja untuk menghubungi petugas.
+				<p class="chat__p"><strong>Status Hari Ini: BUKA</strong></p>
+				{#each lines as line (line.text)}
+					<p class={['chat__p', line.digit && 'chat__p--opt']}>
+						{#if line.digit}
+							Ketik <strong>{line.digit}</strong> {line.text}
 						{:else}
-							{line}
+							{line.text}
 						{/if}
 					</p>
 				{/each}

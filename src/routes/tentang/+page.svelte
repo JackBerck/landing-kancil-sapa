@@ -54,7 +54,16 @@
 					Pertanyaan di luar menu dijawab asisten AI. Asisten hanya boleh memakai tanya jawab yang
 					sudah diverifikasi. Bila tidak yakin, ia mengarahkan Anda ke petugas.
 				</p>
-				<p>Ketik 88 kapan saja untuk menghubungi petugas.</p>
+				<p>
+					Ketik 0 untuk kembali ke menu utama. Setelah bot menjawab, ketik 1 untuk menghubungi
+					petugas, atau ketik 88 kapan saja. Permintaan Anda masuk antrean dan petugas membalas di
+					chat yang sama.
+				</p>
+				<p>
+					Syarat paspor hilang, rusak, dan beda data diajukan lewat
+					<a href={site.sipantasUrl} target="_blank" rel="noopener noreferrer">SIPANTAS</a>. Bot
+					menampilkan tarif PNBP per komponen: tarif paspor dan denda disebut terpisah.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -66,14 +75,17 @@
 				<ul>
 					<li>Bot tidak meminta NIK atau nomor paspor.</li>
 					<li>
-						Bot tidak mengecek status permohonan paspor. Gunakan format yang ada di halaman
-						<a href="/kontak">kontak</a>.
+						Bot tidak membaca sistem status paspor. Pada menu Cek Status Paspor, bot mencatat nomor
+						dan tempat permohonan Anda, lalu petugas membalas di chat pada jam layanan.
 					</li>
 					<li>
 						Informasi bersifat umum. Untuk kasus khusus, keputusan ada pada petugas Kantor Imigrasi
 						Cilacap.
 					</li>
-					<li>Bot tidak menerima foto, suara, atau berkas di luar langkah lampiran pengaduan.</li>
+					<li>
+						Bot hanya membaca pesan teks berupa angka pilihan. Foto, suara, dan berkas tidak
+						diproses bot.
+					</li>
 				</ul>
 			</div>
 		</div>

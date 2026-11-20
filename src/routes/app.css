@@ -374,9 +374,10 @@ body {
 }
 .hero__note li {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	gap: var(--space-xs);
 }
+/* Titik sejajar baris pertama walau teks membungkus (jam petugas kini dua bagian). */
 .hero__note li::before {
 	content: '';
 	inline-size: 9px;
@@ -384,6 +385,7 @@ body {
 	border-radius: var(--radius-pill);
 	background: var(--color-gold);
 	flex: none;
+	transform: translateY(-0.1em);
 }
 @media (max-width: 60rem) {
 	.hero {
@@ -647,7 +649,8 @@ body {
 
 .keys {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	/* Menu utama bot: tiga pilihan (1 Paspor, 2 Izin Tinggal, 3 Pengaduan). */
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: var(--space-lg);
 	margin: 0;
 	padding: 0;
@@ -676,12 +679,7 @@ body {
 	color: var(--color-ink-2);
 	font-size: var(--text-md);
 }
-@media (max-width: 60rem) {
-	.keys {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
-@media (max-width: 30rem) {
+@media (max-width: 44rem) {
 	.keys {
 		grid-template-columns: minmax(0, 1fr);
 	}
@@ -1083,6 +1081,7 @@ body {
 
 .prose {
 	display: grid;
+	align-content: start;
 	gap: var(--space-md);
 	max-width: 68ch;
 }
@@ -1091,14 +1090,42 @@ body {
 	max-width: none;
 	margin-block-start: var(--space-lg);
 }
-.prose ul {
+.prose ul,
+.prose ol {
 	margin: 0;
 	padding-inline-start: 1.2em;
 	display: grid;
 	gap: var(--space-xs);
 }
+.prose ol {
+	align-content: start;
+	padding-inline-start: 1.6em;
+	font-variant-numeric: tabular-nums;
+}
+.prose h3 {
+	font-size: var(--text-lg);
+}
 .prose li::marker {
 	color: var(--color-accent);
+}
+
+.location-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: var(--space-lg);
+}
+.location-list li {
+	display: grid;
+	gap: var(--space-2xs);
+}
+.location-list h3 {
+	font-size: var(--text-lg);
+}
+.location-list address {
+	font-style: normal;
+	color: var(--color-muted);
 }
 
 .contact-grid {

@@ -42,16 +42,18 @@
 			<li>Nomor WhatsApp dan nama profil Anda.</li>
 			<li>Isi pesan yang Anda kirim ke bot, dan balasan bot atau petugas.</li>
 			<li>
-				Untuk pengaduan: nama yang Anda ketik, kategori, isi pengaduan, dan lampiran yang Anda
-				kirim.
+				Untuk pengaduan: isi pengaduan yang Anda sampaikan ke petugas, kategori yang dipilih
+				petugas, dan lampiran yang Anda kirim.
 			</li>
+			<li>Untuk cek status paspor: nomor permohonan dan tempat permohonan yang Anda ketik.</li>
 		</ul>
 		<p>Bot tidak meminta NIK atau nomor paspor. Mohon tidak mengirimkannya di percakapan.</p>
 
 		<h2>Tujuan</h2>
 		<ul>
 			<li>Menjawab pertanyaan dan meneruskan Anda ke petugas bila perlu.</li>
-			<li>Menangani pengaduan dan memberi nomor tiket serta statusnya.</li>
+			<li>Menangani pengaduan dan mengirim tanggapan serta statusnya ke WhatsApp Anda.</li>
+			<li>Meneruskan permintaan cek status paspor ke petugas.</li>
 			<li>Memantau mutu layanan dan memperbarui jawaban.</li>
 		</ul>
 

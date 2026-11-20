@@ -73,7 +73,9 @@
 					<div>
 						<dt>Cek status permohonan paspor</dt>
 						<dd>
-							Hubungi {site.whatsapp[0].display} dengan format CEK#Nomor Permohonan#Nama#Lokasi Pembuatan.
+							Lewat bot: ketik 1, lalu 11 (Cek Status Paspor). Kirim nomor permohonan dan pilih
+							tempat permohonan ({site.applicationPlaces.join(', ')}). Petugas membalas di chat pada
+							jam layanan.
 						</dd>
 					</div>
 				</dl>
@@ -93,6 +95,30 @@
 						>Buka di Google Maps</a
 					>
 				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="lokasi-h">
+		<div class="cols">
+			<div class="col-a">
+				<h2 id="lokasi-h">Lokasi layanan lain</h2>
+				<p class="lead spaced">
+					Layanan paspor {site.office} juga tersedia di Mal Pelayanan Publik berikut.
+				</p>
+			</div>
+			<div class="col-b">
+				<ul class="location-list">
+					{#each site.locations as place (place.name)}
+						<li>
+							<h3>{place.name}</h3>
+							<address>{place.address}</address>
+							<a href={place.maps} target="_blank" rel="noopener noreferrer"
+								>Buka di Google Maps<span class="visually-hidden">: {place.name}</span></a
+							>
+						</li>
+					{/each}
+				</ul>
 			</div>
 		</div>
 	</section>

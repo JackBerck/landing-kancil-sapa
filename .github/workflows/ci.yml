@@ -20,6 +20,8 @@ jobs:
       - run: pnpm check
       - run: pnpm test
       - run: pnpm build
+      - name: Periksa isi halaman hasil build
+        run: pnpm test:build
 
   deploy:
     needs: check
