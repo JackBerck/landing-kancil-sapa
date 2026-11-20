@@ -30,12 +30,20 @@
 			postalCode: site.address.postalCode,
 			addressCountry: 'ID'
 		},
-		openingHoursSpecification: {
-			'@type': 'OpeningHoursSpecification',
-			dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-			opens: '08:00',
-			closes: '16:00'
-		}
+		openingHoursSpecification: [
+			{
+				'@type': 'OpeningHoursSpecification',
+				dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+				opens: '08:00',
+				closes: '16:00'
+			},
+			{
+				'@type': 'OpeningHoursSpecification',
+				dayOfWeek: 'Friday',
+				opens: '08:00',
+				closes: '16:30'
+			}
+		]
 	};
 	const website = {
 		'@context': 'https://schema.org',
