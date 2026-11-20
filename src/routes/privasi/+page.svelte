@@ -72,8 +72,10 @@
 
 		<h2>Situs ini</h2>
 		<p>
-			Situs kancilsapa.com tidak memiliki formulir, tidak memasang cookie pelacak, dan tidak memakai
-			layanan analitik pihak ketiga.
+			Situs kancilsapa.com tidak memasang cookie pelacak dan tidak memakai layanan analitik pihak
+			ketiga. Chat bot di pojok kanan bawah berjalan sepenuhnya di browser Anda: isi chat tidak
+			dikirim ke server mana pun, hanya disimpan sementara di browser (sessionStorage) dan hilang
+			saat tab ditutup. Untuk dilayani petugas, Anda diarahkan ke WhatsApp resmi.
 		</p>
 
 		<h2>Hak Anda</h2>

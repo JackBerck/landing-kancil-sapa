@@ -60,6 +60,10 @@
 					chat yang sama.
 				</p>
 				<p>
+					Menu yang sama juga bisa dicoba lewat chat bot di pojok kanan bawah situs ini. Untuk
+					dilayani petugas, chat diarahkan ke WhatsApp resmi.
+				</p>
+				<p>
 					Syarat paspor hilang, rusak, dan beda data diajukan lewat
 					<a href={site.sipantasUrl} target="_blank" rel="noopener noreferrer">SIPANTAS</a>. Bot
 					menampilkan tarif PNBP per komponen: tarif paspor dan denda disebut terpisah.

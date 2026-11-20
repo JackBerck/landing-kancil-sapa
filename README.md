@@ -37,6 +37,20 @@ Menu bot (beranda dan contoh chat) ada di `botMenu` pada `src/lib/site.ts`. Test
 
 Bila ada kelompok FAQ baru, tambahkan di `groups` pada `src/lib/faq.ts` (slug, awalan kode, judul, deskripsi). Sitemap ikut otomatis.
 
+### Chat bot di situs (pojok kanan bawah)
+
+Versi web dari menu bot WhatsApp: menu, jawaban, pesan standar, dan jam layanan diekspor dari kode bot (`BotScript`, `MenuAnswerResolver`, `BusinessHours`) sehingga teksnya identik.
+
+```sh
+pnpm bot:sync        # tulis src/lib/chatbot/bot-script.json dari repo bot (butuh PHP + vendor Laravel)
+```
+
+- Logika: `src/lib/chatbot/engine.ts` (meniru `BotEngine` bagian menu). Hubungi petugas (menu 3, 88, "1" setelah jawaban, cek status) diarahkan ke WhatsApp resmi, karena situs statis tidak punya antrean petugas. Teks bebas tidak dijawab AI, diperlakukan sebagai salah input seperti bot tanpa AI.
+- Situs tetap tanpa hidrasi (`csr = false`). Widget dibundel terpisah (`vite.chatbot.config.ts`) menjadi `/chatbot/widget.js?v=<hash>`; `pnpm build` menjalankannya otomatis. Gaya ada di `app.css` (`.chatbot*`).
+- CSP harus `script-src 'self'` (lihat `deploy/kancilsapa-security-headers.conf`; salin ke `/etc/nginx/snippets/` di VPS lalu reload nginx). Tanpa itu, browser memblokir widget.
+- Riwayat chat hanya di `sessionStorage` browser, tidak dikirim ke server.
+- Test: `src/lib/chatbot/engine.test.ts` (setiap jalur menu, jam layanan dibandingkan dengan contoh dari `BusinessHours`), dan E2E `pnpm test:e2e` (Playwright, desktop + ponsel; jalankan `pnpm build` dulu).
+
 ### Pemeriksaan hasil build
 
 `pnpm test:build` (dijalankan di CI setelah `pnpm build`) membaca HTML prerender di `build/` dan gagal bila halaman memuat informasi usang: menu lama, alur pengaduan swalayan, format `CEK#`, angka PNBP gabungan, atau tanda `**` mentah.

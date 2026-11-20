@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import data from './content/faqs.json';
@@ -45,6 +45,26 @@ describe('isi FAQ', () => {
 		expect(answer('TRF-003')).not.toContain('penambahan nama');
 		expect(answer('PSP-016')).toContain('Penetapan pengadilan');
 	});
+
+	it('cek status paspor lewat menu 1 > 11, bukan format CEK# (keputusan 21 Nov)', () => {
+		for (const faq of faqs) expect(faq.answer, faq.code).not.toContain('CEK#');
+		expect(answer('AMB-009')).toContain('lalu **11** (Cek Status Paspor)');
+	});
+
+	it.skipIf(!hasLaravel)(
+		'bot-script.json chat bot sama dengan ekspor terbaru dari bot (jalankan pnpm bot:sync bila gagal)',
+		() => {
+			const fresh = JSON.parse(
+				execFileSync('php', [resolve(__dirname, '../../scripts/bot-export.php'), laravel], {
+					encoding: 'utf8',
+					maxBuffer: 16 * 1024 * 1024
+				})
+			);
+			const saved = JSON.parse(readFileSync(resolve(__dirname, 'chatbot/bot-script.json'), 'utf8'));
+			expect(saved).toEqual(fresh);
+		},
+		60_000
+	);
 
 	it('format WhatsApp sudah diubah: tidak ada tebal satu bintang', () => {
 		for (const faq of faqs) {

@@ -8,7 +8,7 @@
 	import { groups } from '#lib/faq';
 	import type { LayoutProps } from './$types';
 
-	let { children }: LayoutProps = $props();
+	let { children, data }: LayoutProps = $props();
 
 	const isCurrent = (href: string) =>
 		page.url.pathname === href || page.url.pathname.startsWith(href + '/');
@@ -63,6 +63,10 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/manifest.webmanifest" />
 	<meta name="theme-color" content="#0c2042" />
+	{#if data.chatbotSrc}
+		<!-- Satu-satunya JavaScript di situs: chat bot menu (CSP script-src 'self'). -->
+		<script src={data.chatbotSrc} defer></script>
+	{/if}
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<script type="application/ld+json">${JSON.stringify(website)}<` + `/script>`}
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->

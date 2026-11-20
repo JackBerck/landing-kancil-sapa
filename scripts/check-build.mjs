@@ -65,6 +65,20 @@ if (!html('layanan/paspor-wni.html').includes('<a href="https://sipantas.kanimci
 	failures.push('layanan/paspor-wni.html: tautan SIPANTAS tidak bisa diklik');
 }
 
+// Chat bot: bundel ada, setiap halaman memuatnya (tanpa skrip inline, sesuai CSP script-src 'self').
+try {
+	readFileSync(join(build, 'chatbot/widget.js'));
+} catch {
+	failures.push(
+		'chatbot/widget.js tidak ada (jalankan pnpm build, yang juga menjalankan build:chatbot)'
+	);
+}
+const csp = readFileSync(resolve(build, '../deploy/kancilsapa-security-headers.conf'), 'utf8');
+if (!csp.includes("script-src 'self'"))
+	failures.push("CSP deploy belum mengizinkan script-src 'self' untuk chat bot");
+must('faq.html', 'ketik 1 (Pelayanan Paspor WNI), lalu 11 (Cek Status Paspor)');
+mustNot('faq.html', 'CEK#');
+
 // Semua halaman: tidak ada penanda tebal mentah dan tidak ada angka PNBP gabungan.
 const pages = [];
 const walk = (dir) => {
@@ -76,6 +90,20 @@ const walk = (dir) => {
 };
 walk(build);
 for (const page of pages) {
+	const markup = html(page);
+	if (
+		page !== '404.html' &&
+		!/<script src="\/chatbot\/widget\.js\?v=[a-f0-9]{12}" defer/.test(markup)
+	) {
+		failures.push(`${page}: skrip chat bot tidak dimuat`);
+	}
+	if (
+		/<script(?![^>]*\bsrc=)[^>]*>(?!\s*<\/script>)/.test(
+			markup.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
+		)
+	) {
+		failures.push(`${page}: ada skrip inline (diblokir CSP)`);
+	}
 	mustNot(page, '**');
 	for (const total of ['1.150.000', '1.450.000', '1.650.000', '1.950.000']) mustNot(page, total);
 }
