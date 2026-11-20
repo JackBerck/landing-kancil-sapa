@@ -3,7 +3,7 @@
 	import WaButton from '#lib/components/WaButton.svelte';
 	import ChatSample from '#lib/components/ChatSample.svelte';
 	import logo from '#lib/assets/brand/logo-imigrasi.png';
-	import { site, waUrl } from '#lib/site';
+	import { site, waUrl, botMenu } from '#lib/site';
 	import { faqs, groups, faqsOf, faqByCode, groupOfCode, anchorOf } from '#lib/faq';
 
 	const steps = [
@@ -17,20 +17,16 @@
 		},
 		{
 			title: 'Baca jawabannya',
-			text: 'Jawaban sudah diverifikasi petugas. Ingin bicara dengan petugas? Ketik 88.'
+			text: 'Jawaban sudah diverifikasi petugas. Setelah jawaban, ketik 1 untuk bicara dengan petugas.'
 		}
 	];
 
-	const menu = [
-		{
-			digit: '0',
-			title: 'Warga Negara Indonesia',
-			text: 'Paspor, pembayaran, pengambilan, tarif.'
-		},
-		{ digit: '1', title: 'Warga Negara Asing', text: 'Izin tinggal, visa, pelaporan WNA.' },
-		{ digit: '2', title: 'Pengaduan', text: 'Buat pengaduan atau cek tiket.' },
-		{ digit: '3', title: 'Hubungi petugas', text: 'Kontak resmi petugas.' }
-	];
+	const summaries: Record<string, string> = {
+		'1': 'Biaya, syarat paspor baru, ganti, anak, hilang, rusak, beda data, M-Paspor, dan cek status.',
+		'2': 'Tarif izin tinggal dan visa, pelaporan WNA meninggal, dan lokasi layanan.',
+		'3': 'Diteruskan ke petugas. Bila perlu, petugas mencatatnya sebagai pengaduan resmi.'
+	};
+	const menu = botMenu.main.map((item) => ({ ...item, text: summaries[item.digit] }));
 
 	const special = [
 		{
@@ -45,7 +41,7 @@
 		{ code: 'LYK-010', name: 'HOTS', text: 'Paspor calon jemaah haji di lokasi.' }
 	];
 
-	const popular = ['PSP-001', 'TRF-001', 'BYR-004', 'AMB-009', 'LYK-002']
+	const popular = ['PSP-001', 'TRF-001', 'PSP-011', 'BYR-004', 'LYK-002']
 		.map((c) => faqByCode(c))
 		.filter((f) => f !== undefined);
 
@@ -238,31 +234,49 @@
 	<div class="container">
 		<div class="section-head">
 			<h2 id="menu-h">Pilih angka di menu utama</h2>
-			<p class="lead">Empat pilihan. Angka lain bisa dipakai kapan saja.</p>
+			<p class="lead">Tiga pilihan, masing-masing berisi submenu bernomor.</p>
 		</div>
 		<ul class="keys">
 			{#each menu as item, i (item.digit)}
-				<li class="key plastic tint-{[4, 5, 6, 7][i]}">
+				<li class="key plastic tint-{[4, 5, 6][i]}">
 					<span class="key__digit" aria-hidden="true">{item.digit}</span>
-					<h3>{item.title}</h3>
+					<h3>{item.label}</h3>
 					<p>{item.text}</p>
 				</li>
 			{/each}
 		</ul>
 		<dl class="commands">
 			<div>
-				<dt>9</dt>
-				<dd>Kembali satu langkah</dd>
-			</div>
-			<div>
-				<dt>99</dt>
+				<dt>0</dt>
 				<dd>Ke menu utama</dd>
 			</div>
 			<div>
+				<dt>1</dt>
+				<dd>Hubungi petugas, setelah bot menjawab</dd>
+			</div>
+			<div>
 				<dt>88</dt>
-				<dd>Hubungi petugas</dd>
+				<dd>Hubungi petugas, kapan saja</dd>
 			</div>
 		</dl>
+		<div class="cols spaced-l">
+			<div class="col-a prose">
+				<h3>Isi menu 1, Pelayanan Paspor WNI</h3>
+				<ol>
+					{#each botMenu.paspor as label (label)}
+						<li>{label}</li>
+					{/each}
+				</ol>
+			</div>
+			<div class="col-b prose">
+				<h3>Isi menu 2, Pelayanan Izin Tinggal</h3>
+				<ol>
+					{#each botMenu.izinTinggal as label (label)}
+						<li>{label}</li>
+					{/each}
+				</ol>
+			</div>
+		</div>
 		<p class="spaced-l lead">
 			Pertanyaan di luar menu dijawab asisten AI. Ia hanya memakai jawaban yang diverifikasi
 			petugas, dan mengarahkan Anda ke petugas bila tidak yakin.
@@ -324,7 +338,8 @@
 		<div class="band">
 			<h2 id="aman-h">Bot tidak pernah meminta NIK atau nomor paspor.</h2>
 			<p class="lead">
-				Pada pengaduan, bot hanya menanyakan nama, kategori, dan isi pengaduan Anda.
+				Untuk cek status, bot hanya menanyakan nomor permohonan dan tempat permohonan. Pengaduan
+				ditangani langsung oleh petugas di chat.
 			</p>
 		</div>
 	</div>

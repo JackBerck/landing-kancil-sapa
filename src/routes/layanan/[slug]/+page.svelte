@@ -64,7 +64,7 @@
 	<section class="section" aria-labelledby="tanya-h">
 		<h2 id="tanya-h">Masih ada yang belum jelas?</h2>
 		<p class="lead spaced">
-			Tanyakan lewat WhatsApp. Untuk kasus khusus, ketik 88 agar bot memberi kontak petugas.
+			Tanyakan lewat WhatsApp. Untuk kasus khusus, ketik 88 agar diteruskan ke petugas.
 		</p>
 		<div class="actions spaced-l">
 			<WaButton index={0} />

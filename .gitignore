@@ -24,3 +24,8 @@ vite.config.ts.timestamp-*
 
 # Hallmark screenshots
 .hallmark/shots
+
+# E2E (Playwright)
+/test-results
+/playwright-report
+/static/chatbot

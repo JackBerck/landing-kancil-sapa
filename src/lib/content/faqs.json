@@ -1,433 +1,461 @@
 {
-	"generated_at": "2026-11-16T04:36:42.533Z",
-	"source": "dokumen",
+	"generated_at": "2026-11-20T19:01:18.713Z",
+	"source": "laravel",
 	"faqs": [
 		{
 			"code": "PSP-001",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa saja persyaratan untuk membuat paspor baru?",
 			"answer": "KTP elektronik, Kartu Keluarga, dan salah satu dari akta lahir/ijazah/buku nikah. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-002",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa saja persyaratan untuk penggantian paspor?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama. Daftar terlebih dahulu melalui aplikasi M-Paspor.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama\nDaftar terlebih dahulu melalui aplikasi M-Paspor.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-003",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk keperluan wisata?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Rencana perjalanan (akomodasi, tempat yang dikunjungi, dan lama berwisata). Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Rencana perjalanan (akomodasi, tempat yang dikunjungi, dan lama berwisata).\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-004",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk keperluan belajar?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Surat pengantar dari sekolah/kampus. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Surat pengantar dari sekolah/kampus.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-005",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk berobat ke luar negeri?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Surat riwayat kesehatan dan surat rujukan rumah sakit untuk berobat ke luar negeri. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Surat riwayat kesehatan dan surat rujukan rumah sakit untuk berobat ke luar negeri.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-006",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk calon pekerja migran Indonesia (CPMI)?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); ID CPMI dari BP2MI; Surat pengantar dari LPK; Kontrak kerja. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• ID CPMI dari BP2MI\n• Surat pengantar dari LPK\n• Kontrak kerja.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-007",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk pelaut?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); BST (Basic Safety Training); Buku pelaut; Surat penempatan dari perusahaan atau surat pengantar dari sekolah pelayaran. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• BST (Basic Safety Training)\n• Buku pelaut\n• Surat penempatan dari perusahaan atau surat pengantar dari sekolah pelayaran.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-008",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk umrah?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Surat pengantar dari biro umrah; Surat pernyataan penambahan nama bermeterai (bagi yang namanya hanya satu kata). Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Surat pengantar dari biro umrah\n• Surat pernyataan penambahan nama bermeterai (bagi yang namanya hanya satu kata).\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-009",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk haji?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Surat rekomendasi dari Kementerian Agama; Bukti pendaftaran ibadah haji (BPIH); Surat pernyataan penambahan nama bermeterai (bagi yang namanya hanya satu kata). Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Surat rekomendasi dari Kementerian Agama\n• Bukti pendaftaran ibadah haji (BPIH)\n• Surat pernyataan penambahan nama bermeterai (bagi yang namanya hanya satu kata).\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-010",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor untuk magang?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Paspor lama (jika sudah pernah memiliki paspor); Surat pengantar dari LPK; Kontrak kerja; Sertifikat kelulusan bahasa. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Paspor lama (jika sudah pernah memiliki paspor)\n• Surat pengantar dari LPK\n• Kontrak kerja\n• Sertifikat kelulusan bahasa.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-011",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat membuat paspor yang hilang?",
-			"answer": "**Persyaratan:** KTP elektronik; Kartu Keluarga; Akta lahir / ijazah / buku nikah; Surat keterangan kehilangan dari kepolisian setempat; Fotokopi paspor lama (dapat diminta ke kantor imigrasi yang menerbitkan). Berita Acara Pemeriksaan (BAP) diajukan online melalui https://sipantas.kanimcilacap.com/. Pemohon wajib datang ke kantor imigrasi setelah permohonan terverifikasi oleh petugas, dengan membawa berkas asli dan fotokopi ukuran A4. Denda paspor hilang Rp1.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "Permohonan paspor hilang tidak melalui aplikasi M-Paspor. Daftar dan unggah dokumen melalui https://sipantas.kanimcilacap.com/, lalu datang ke kantor imigrasi setelah permohonan terverifikasi oleh petugas.\n\n**Persyaratan:**\n• Kartu Tanda Penduduk (KTP)\n• Kartu Keluarga\n• Surat kehilangan (kepolisian)\n• Akte / ijazah / surat nikah (terdapat tanggal, bulan, dan tahun lahir)\n• Dokumen pendukung lainnya (rekomendasi biro umrah / BPIH, dokumen pelaut, rekomendasi perusahaan / LPK / kontrak kerja, lainnya)\n• Paspor lama\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "PSP-012",
-			"category": null,
+			"category": "Permohonan Paspor WNI",
 			"question": "Apa syarat permohonan affidavit untuk anak berkewarganegaraan ganda?",
-			"answer": "**Persyaratan:** Surat permohonan dan jaminan; Akta kelahiran anak; Bukti lapor kelahiran dari Disdukcapil (jika lahir di luar negeri); KTP dan Kartu Keluarga orang tua; Buku nikah orang tua; Bukti lapor pernikahan dari Disdukcapil (jika menikah di luar negeri); Paspor orang tua; Paspor Indonesia anak (jika ada); Paspor asing anak (jika ada); Sertifikat ABG. Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• Surat permohonan dan jaminan\n• Akta kelahiran anak\n• Bukti lapor kelahiran dari Disdukcapil (jika lahir di luar negeri)\n• KTP dan Kartu Keluarga orang tua\n• Buku nikah orang tua\n• Bukti lapor pernikahan dari Disdukcapil (jika menikah di luar negeri)\n• Paspor orang tua\n• Paspor Indonesia anak (jika ada)\n• Paspor asing anak (jika ada)\n• Sertifikat ABG.\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-001",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Apa saja persyaratan pembuatan paspor untuk anak?",
-			"answer": "**Persyaratan:** KTP elektronik orang tua; Kartu Keluarga; Buku nikah orang tua; Akta kelahiran anak; Paspor orang tua; Paspor lama anak (jika ada); Akta cerai dan penetapan hak asuh (jika orang tua bercerai); Affidavit (untuk anak berkewarganegaraan ganda); Surat pernyataan jaminan orang tua bermeterai (formulir tersedia di kantor imigrasi). Bawa berkas asli dan fotokopi ukuran A4.",
-			"verified_at": "2026-11-16"
+			"answer": "**Persyaratan:**\n• KTP elektronik orang tua\n• Kartu Keluarga\n• Buku nikah orang tua\n• Akta kelahiran anak\n• Paspor orang tua\n• Paspor lama anak (jika ada)\n• Akta cerai dan penetapan hak asuh (jika orang tua bercerai)\n• Affidavit (untuk anak berkewarganegaraan ganda)\n• Surat pernyataan jaminan orang tua bermeterai (formulir tersedia di kantor imigrasi).\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-002",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Apakah anak di bawah 5 tahun harus mendaftar melalui M-Paspor?",
 			"answer": "Tidak. Anak di bawah 5 tahun dapat langsung datang ke kantor imigrasi tanpa mendaftar di M-Paspor.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-003",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Apakah anak usia 5–17 tahun harus mendaftar melalui M-Paspor?",
 			"answer": "Ya. Anak usia 5–17 tahun wajib mendaftar melalui aplikasi M-Paspor.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-004",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Berapa masa berlaku paspor anak di bawah 17 tahun?",
 			"answer": "Masa berlaku paspor anak di bawah 17 tahun adalah 5 tahun.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-005",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Siapa yang menandatangani surat pernyataan jika kedua orang tua bercerai hidup?",
 			"answer": "Jika ada penetapan pengadilan tentang hak asuh: orang tua pemegang hak asuh. Jika permohonan diajukan orang tua yang tidak memegang hak asuh, atau perceraian diputus tanpa penetapan hak asuh: kedua orang tua. Jika salah satu orang tua tidak diketahui keberadaannya: orang tua yang diketahui keberadaannya, disertai keterangan bahwa salah satu orang tua tidak ditemukan.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-006",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Bagaimana jika salah satu orang tua anak sudah meninggal?",
 			"answer": "Surat pernyataan dibuat oleh orang tua yang masih hidup, dengan melampirkan surat kematian orang tua yang meninggal.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-007",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Bagaimana jika kedua orang tua anak sudah meninggal?",
 			"answer": "Surat pernyataan dibuat oleh keluarga sedarah dalam garis lurus ke atas berdasarkan penetapan pengadilan tentang perwalian anak, dengan melampirkan surat kematian kedua orang tua.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-008",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Bagaimana jika anak yatim piatu berada di panti asuhan atau dipelihara negara?",
 			"answer": "Surat pernyataan dibuat oleh yayasan atau dinas sosial.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "ANK-009",
-			"category": null,
+			"category": "Paspor Anak dan Kondisi Keluarga",
 			"question": "Bagaimana persyaratan paspor untuk anak yang diadopsi?",
 			"answer": "Surat pernyataan dibuat oleh orang tua asuh berdasarkan penetapan pengadilan.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-001",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Apa syarat mengambil paspor sendiri?",
-			"answer": "KTP elektronik; Bukti permohonan; Bukti pembayaran.",
-			"verified_at": "2026-11-16"
+			"answer": "• KTP elektronik\n• Bukti permohonan\n• Bukti pembayaran.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-002",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Apa syarat mengambil paspor yang diwakilkan anggota keluarga dalam satu Kartu Keluarga?",
-			"answer": "KTP elektronik, bukti permohonan, dan bukti pembayaran; Kartu Keluarga (fotokopi dan menunjukkan aslinya); KTP pengambil (fotokopi dan menunjukkan aslinya).",
-			"verified_at": "2026-11-16"
+			"answer": "• KTP elektronik, bukti permohonan, dan bukti pembayaran\n• Kartu Keluarga (fotokopi dan menunjukkan aslinya)\n• KTP pengambil (fotokopi dan menunjukkan aslinya).",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-003",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Apa syarat mengambil paspor yang diwakilkan orang di luar Kartu Keluarga?",
-			"answer": "KTP elektronik, bukti permohonan, dan bukti pembayaran; Surat kuasa bermeterai dari pemilik paspor; KTP pengambil (fotokopi dan menunjukkan aslinya).",
-			"verified_at": "2026-11-16"
+			"answer": "• KTP elektronik, bukti permohonan, dan bukti pembayaran\n• Surat kuasa bermeterai dari pemilik paspor\n• KTP pengambil (fotokopi dan menunjukkan aslinya).",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-004",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Berapa hari kerja sampai paspor diambilkan pada layanan pengiriman melalui pos?",
-			"answer": "Pada layanan pengiriman paspor melalui pos, paspor diambilkan setelah 4 hari kerja sejak proses permohonan selesai. Lama penyelesaian untuk pengambilan biasa tidak tercantum; silakan hubungi petugas.",
-			"verified_at": "2026-11-16"
+			"answer": "Pada layanan pengiriman paspor melalui pos, paspor diambilkan setelah 4 hari kerja sejak proses permohonan selesai.\nLama penyelesaian untuk pengambilan biasa tidak tercantum; silakan hubungi petugas.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-005",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Bagaimana ketentuan pengiriman paspor melalui pos di Kantor Imigrasi Cilacap?",
-			"answer": "Pemohon datang sendiri ke Koperasi dan sudah menyelesaikan seluruh tahapan permohonan paspor. Mengisi formulir di Koperasi Pintu Gerbang Sejahtera dan menandatangani surat kuasa bermeterai. Setelah paspor diambilkan, paspor difoto dan dikirim ke HP pemohon untuk konfirmasi kebenaran data. Paspor dijemput Pos Indonesia dan dikirim ke alamat sesuai permintaan, mengikuti standar pengiriman Pos Indonesia. Syarat dan ketentuan lain berlaku.",
-			"verified_at": "2026-11-16"
+			"answer": "• Pemohon datang sendiri ke Koperasi dan sudah menyelesaikan seluruh tahapan permohonan paspor.\n• Mengisi formulir di Koperasi Pintu Gerbang Sejahtera dan menandatangani surat kuasa bermeterai.\n• Setelah paspor diambilkan, paspor difoto dan dikirim ke HP pemohon untuk konfirmasi kebenaran data.\n• Paspor dijemput Pos Indonesia dan dikirim ke alamat sesuai permintaan, mengikuti standar pengiriman Pos Indonesia.\nSyarat dan ketentuan lain berlaku.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-006",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Apakah pengurusan pengiriman paspor melalui pos dapat diwakilkan?",
 			"answer": "Tidak. Pemohon datang sendiri ke koperasi, dan surat kuasa bermeterai harus ditandatangani sendiri (tidak boleh diwakilkan).",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-007",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Dokumen apa yang disiapkan untuk surat kuasa pengambilan paspor pada layanan pos?",
-			"answer": "Fotokopi KTP; Fotokopi KK (jika ada anggota keluarga yang memproses paspor bersamaan); Bukti permohonan paspor (M-Paspor) atau resi permohonan; Bukti pembayaran paspor (bukti transfer/struk).",
-			"verified_at": "2026-11-16"
+			"answer": "• Fotokopi KTP\n• Fotokopi KK (jika ada anggota keluarga yang memproses paspor bersamaan)\n• Bukti permohonan paspor (M-Paspor) atau resi permohonan\n• Bukti pembayaran paspor (bukti transfer/struk).",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-008",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Apakah penerima kuasa bertanggung jawab jika persyaratan masih kurang atau paspor belum jadi?",
 			"answer": "Tidak. Penerima kuasa tidak bertanggung jawab bila di kemudian hari saat pengambilan ternyata masih ada kekurangan syarat permohonan dan/atau paspor belum selesai.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "AMB-009",
-			"category": null,
+			"category": "Pengambilan, Pengiriman, dan Status Paspor",
 			"question": "Bagaimana cara mengecek status permohonan paspor?",
-			"answer": "Hubungi call center **081217000900** dengan format: **CEK#Nomor Permohonan#Nama#Lokasi Pembuatan** Pilihan lokasi: Kanim Cilacap / MPP Banyumas / MPP Purbalingga / Kemenag Purbalingga.",
-			"verified_at": "2026-11-16"
+			"answer": "Cek status lewat menu WhatsApp KANCIL SAPA: ketik **1** (Pelayanan Paspor WNI), lalu **11** (Cek Status Paspor).\nKirim **nomor permohonan** paspor Anda, lalu pilih **tempat permohonan**: Imigrasi Cilacap / MPP Banyumas / MPP Purbalingga / Ngapak Banyumas / Ngapak Purbalingga.\nPetugas akan membalas status permohonan Anda di chat ini pada jam layanan.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "BYR-001",
-			"category": null,
+			"category": "Pembayaran Paspor",
 			"question": "Bagaimana cara membayar paspor melalui ATM?",
-			"answer": "Siapkan kode billing, lalu: **BCA:** Pembayaran › MPN/Pajak › Penerimaan Negara › masukkan kode MPN G2. **BNI:** Menu Lainnya › Pembayaran › Penerimaan Negara › Pajak/PNBP › masukkan kode MPN. **BRI:** Transaksi Lainnya › Pembayaran › Lainnya › MPN › masukkan kode MPN G2. **Mandiri:** Bayar/Beli › Penerimaan Negara › Pajak/PNBP/Cukai › masukkan kode MPN › Konfirmasi Pembayaran. Simpan bukti pembayaran.",
-			"verified_at": "2026-11-16"
+			"answer": "Siapkan kode billing, lalu:\n• **BCA:** Pembayaran › MPN/Pajak › Penerimaan Negara › masukkan kode MPN G2.\n• **BNI:** Menu Lainnya › Pembayaran › Penerimaan Negara › Pajak/PNBP › masukkan kode MPN.\n• **BRI:** Transaksi Lainnya › Pembayaran › Lainnya › MPN › masukkan kode MPN G2.\n• **Mandiri:** Bayar/Beli › Penerimaan Negara › Pajak/PNBP/Cukai › masukkan kode MPN › Konfirmasi Pembayaran.\nSimpan bukti pembayaran.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "BYR-002",
-			"category": null,
+			"category": "Pembayaran Paspor",
 			"question": "Apakah pembayaran paspor bisa dilakukan melalui mobile banking atau internet banking?",
-			"answer": "Bisa. Siapkan kode billing, lalu: **BNI Mobile:** Pembayaran › MPN G2 › masukkan nomor MPN di kolom nomor tagihan › konfirmasi dengan PIN transaksi. **KlikBCA** (ibank.klikbca.com): Pembayaran › Pajak › Penerimaan Negara › masukkan nomor MPN di kolom kode billing › konfirmasi dengan KeyBCA. **BRImo:** Tagihan › Penerimaan Negara › masukkan nomor MPN G2 › konfirmasi dengan password dan M-Token. **Livin’ by Mandiri:** Bayar › Pembayaran Baru › Pembayaran Negara › pilih IDR/Pajak/PNBP/Cukai pada kolom penyedia jasa.",
-			"verified_at": "2026-11-16"
+			"answer": "Bisa. Siapkan kode billing, lalu:\n• **BNI Mobile:** Pembayaran › MPN G2 › masukkan nomor MPN di kolom nomor tagihan › konfirmasi dengan PIN transaksi.\n• **KlikBCA** (ibank.klikbca.com): Pembayaran › Pajak › Penerimaan Negara › masukkan nomor MPN di kolom kode billing › konfirmasi dengan KeyBCA.\n• **BRImo:** Tagihan › Penerimaan Negara › masukkan nomor MPN G2 › konfirmasi dengan password dan M-Token.\n• **Livin’ by Mandiri:** Bayar › Pembayaran Baru › Pembayaran Negara › pilih IDR/Pajak/PNBP/Cukai pada kolom penyedia jasa.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "BYR-003",
-			"category": null,
+			"category": "Pembayaran Paspor",
 			"question": "Apakah pembayaran paspor bisa dilakukan melalui aplikasi dompet digital atau marketplace?",
-			"answer": "Bisa. Siapkan kode billing, lalu: **DANA:** Lihat Semua › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode billing › simpan resi. **Tokopedia:** Top-Up dan Tagihan › Penerimaan Negara › Bayar PNBP › masukkan kode bayar MPN G2. **GoPay:** Semua Menu › Layanan Publik › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode bayar. **Shopee:** Semua Menu › Pulsa, Tagihan & Tiket › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode bayar.",
-			"verified_at": "2026-11-16"
+			"answer": "Bisa. Siapkan kode billing, lalu:\n• **DANA:** Lihat Semua › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode billing › simpan resi.\n• **Tokopedia:** Top-Up dan Tagihan › Penerimaan Negara › Bayar PNBP › masukkan kode bayar MPN G2.\n• **GoPay:** Semua Menu › Layanan Publik › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode bayar.\n• **Shopee:** Semua Menu › Pulsa, Tagihan & Tiket › Penerimaan Negara › Penerimaan Negara Bukan Pajak › masukkan kode bayar.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "BYR-004",
-			"category": null,
+			"category": "Pembayaran Paspor",
 			"question": "Apakah pembayaran paspor bisa dilakukan di kantor pos, Indomaret, atau Alfamart?",
 			"answer": "Bisa. Datang ke kantor Pos Indonesia, Indomaret, atau Alfamart terdekat, berikan nomor kode billing kepada petugas/kasir, lakukan pembayaran, lalu simpan resi pembayaran.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-001",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif paspor biasa elektronik dengan masa berlaku 5 tahun?",
 			"answer": "Rp650.000 (paspor biasa elektronik laminasi, masa berlaku 5 tahun).",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-002",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif paspor biasa elektronik dengan masa berlaku 10 tahun?",
 			"answer": "Rp950.000 (paspor biasa elektronik laminasi, masa berlaku 10 tahun).",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-003",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa denda paspor hilang dan paspor rusak?",
-			"answer": "Denda paspor hilang: Rp1.000.000; Denda paspor rusak: Rp500.000. Berita Acara Pemeriksaan (BAP) paspor hilang, rusak, dan penambahan nama dapat diajukan online melalui https://sipantas.kanimcilacap.com/.",
-			"verified_at": "2026-11-16"
+			"answer": "• Denda paspor hilang: Rp1.000.000\n• Denda paspor rusak: Rp500.000.\nBerita Acara Pemeriksaan (BAP) paspor hilang, rusak, dan beda data dapat diajukan online melalui https://sipantas.kanimcilacap.com/.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-004",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa biaya layanan percepatan paspor?",
 			"answer": "Biaya layanan percepatan adalah Rp1.000.000.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-005",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif izin masuk kembali (Re-entry Permit)?",
-			"answer": "Sampai 30 hari: Rp300.000; Sampai 60 hari: Rp400.000; Sampai 90 hari: Rp500.000; Sampai 6 bulan: Rp750.000; Sampai 1 tahun: Rp1.500.000; Sampai 2 tahun: Rp2.000.000; Sampai 5 tahun: Rp3.500.000; Sampai 10 tahun: Rp5.000.000; Masa berlaku tidak terbatas: Rp8.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "• Sampai 30 hari: Rp300.000\n• Sampai 60 hari: Rp400.000\n• Sampai 90 hari: Rp500.000\n• Sampai 6 bulan: Rp750.000\n• Sampai 1 tahun: Rp1.500.000\n• Sampai 2 tahun: Rp2.000.000\n• Sampai 5 tahun: Rp3.500.000\n• Sampai 10 tahun: Rp5.000.000\n• Masa berlaku tidak terbatas: Rp8.000.000.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-006",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif Izin Tinggal Kunjungan (ITK)?",
-			"answer": "Sampai 7 hari: Rp250.000; Sampai 14 hari: Rp350.000; Sampai 30 hari: Rp500.000; Sampai 60 hari: Rp1.000.000; Sampai 90 hari: Rp1.500.000; Sampai 180 hari: Rp2.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "• Sampai 7 hari: Rp250.000\n• Sampai 14 hari: Rp350.000\n• Sampai 30 hari: Rp500.000\n• Sampai 60 hari: Rp1.000.000\n• Sampai 90 hari: Rp1.500.000\n• Sampai 180 hari: Rp2.000.000.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-007",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif Izin Tinggal Terbatas (ITAS)?",
-			"answer": "Sampai 30 hari: Rp500.000; Sampai 60 hari: Rp1.000.000; Sampai 90 hari: Rp1.500.000; Sampai 6 bulan: Rp2.000.000; Sampai 1 tahun: Rp3.000.000; Sampai 2 tahun: Rp5.000.000; Sampai 5 tahun: Rp7.000.000; Sampai 10 tahun: Rp12.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "• Sampai 30 hari: Rp500.000\n• Sampai 60 hari: Rp1.000.000\n• Sampai 90 hari: Rp1.500.000\n• Sampai 6 bulan: Rp2.000.000\n• Sampai 1 tahun: Rp3.000.000\n• Sampai 2 tahun: Rp5.000.000\n• Sampai 5 tahun: Rp7.000.000\n• Sampai 10 tahun: Rp12.000.000.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-008",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif Izin Tinggal Tetap (ITAP)?",
-			"answer": "Sampai 5 tahun: Rp7.000.000; Sampai 10 tahun: Rp12.000.000; Jangka waktu tidak terbatas: Rp15.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "• Sampai 5 tahun: Rp7.000.000\n• Sampai 10 tahun: Rp12.000.000\n• Jangka waktu tidak terbatas: Rp15.000.000.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-009",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif izin meninggalkan Indonesia untuk tidak kembali (Exit Permit Only)?",
 			"answer": "Rp100.000 per orang.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-010",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Berapa tarif visa kunjungan beberapa kali perjalanan?",
-			"answer": "Sampai 60 hari: Rp1.500.000; Sampai 90 hari: Rp2.000.000; Sampai 180 hari: Rp2.500.000; Sampai 1 tahun: Rp3.000.000; Sampai 2 tahun: Rp5.000.000; Sampai 5 tahun: Rp10.000.000; Sampai 10 tahun: Rp15.000.000.",
-			"verified_at": "2026-11-16"
+			"answer": "• Sampai 60 hari: Rp1.500.000\n• Sampai 90 hari: Rp2.000.000\n• Sampai 180 hari: Rp2.500.000\n• Sampai 1 tahun: Rp3.000.000\n• Sampai 2 tahun: Rp5.000.000\n• Sampai 5 tahun: Rp10.000.000\n• Sampai 10 tahun: Rp15.000.000.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "TRF-011",
-			"category": null,
+			"category": "Tarif PNBP",
 			"question": "Apa dasar hukum tarif tersebut?",
 			"answer": "Tarif mengacu pada Peraturan Pemerintah (PP) Nomor 45 Tahun 2024 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang berlaku pada Kementerian Hukum dan Hak Asasi Manusia.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-001",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa saja layanan khusus di Kantor Imigrasi Cilacap?",
-			"answer": "KANCIL NARI (layanan prioritas); KANCIL PERSAMI (pengambilan paspor Sabtu–Minggu); KANCIL PESAT (paspor darurat bagi pemohon sakit); Eazy Paspor (layanan jemput bola untuk kelompok); KANCIL NGAPAK (layanan paspor di kabupaten); HOTS (Haji On The Spot).",
-			"verified_at": "2026-11-16"
+			"answer": "• KANCIL NARI (layanan prioritas)\n• KANCIL PERSAMI (pengambilan paspor Sabtu–Minggu)\n• KANCIL PESAT (paspor darurat bagi pemohon sakit)\n• Eazy Paspor (layanan jemput bola untuk kelompok)\n• KANCIL NGAPAK (layanan paspor di kabupaten)\n• HOTS (Haji On The Spot).",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-002",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan KANCIL NARI?",
 			"answer": "Layanan prioritas bagi ibu hamil, penyandang disabilitas, anak di bawah 5 tahun, dan lansia di atas 60 tahun untuk mengajukan paspor langsung di Kantor Imigrasi Cilacap. Penerima layanan mendapat antrean khusus berkode C-(nomor urut) dan dapat membuat paspor tanpa mendaftar di M-Paspor.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-003",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan KANCIL PERSAMI?",
 			"answer": "Layanan pengambilan paspor pada hari Sabtu dan Minggu, pukul 08.00–12.00, bagi pemohon yang sibuk pada hari kerja.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-004",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan KANCIL PESAT?",
 			"answer": "Layanan paspor darurat bagi pemohon yang sakit dan tidak bisa datang ke Kantor Imigrasi Cilacap. Petugas datang ke rumah atau tempat lain untuk mengambil data biometrik dan wawancara.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-005",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Siapa yang dapat mengajukan layanan KANCIL PESAT?",
-			"answer": "WNI yang bertempat atau dirawat di wilayah kerja Kantor Imigrasi Cilacap Sakit atau berpenyakit sehingga tidak dapat datang langsung, atau bergantung pada peralatan penunjang medis Memiliki surat keterangan sakit (diagnosa) dari dokter rumah sakit Memenuhi persyaratan permohonan paspor yang berlaku",
-			"verified_at": "2026-11-16"
+			"answer": "• WNI yang bertempat atau dirawat di wilayah kerja Kantor Imigrasi Cilacap\n• Sakit atau berpenyakit sehingga tidak dapat datang langsung, atau bergantung pada peralatan penunjang medis\n• Memiliki surat keterangan sakit (diagnosa) dari dokter rumah sakit\n• Memenuhi persyaratan permohonan paspor yang berlaku.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-006",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan Eazy Paspor?",
-			"answer": "Layanan jemput bola: petugas datang ke lokasi pemohon (“Kamu di situ aja, kami yang datang ke sana”). Pengajuan minimal 30 pemohon ke Kantor Imigrasi Kelas I TPI Cilacap, lewat email atau WhatsApp.; Hanya untuk pembuatan paspor baru dan penggantian paspor.; Jadwal ditentukan kantor imigrasi pada hari kerja..",
-			"verified_at": "2026-11-16"
+			"answer": "• Layanan jemput bola: petugas datang ke lokasi pemohon (“Kamu di situ aja, kami yang datang ke sana”). Pengajuan minimal 30 pemohon ke Kantor Imigrasi Kelas I TPI Cilacap, lewat email atau WhatsApp\n• Hanya untuk pembuatan paspor baru dan penggantian paspor\n• Jadwal ditentukan kantor imigrasi pada hari kerja.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-007",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Siapa yang dapat mengajukan Eazy Paspor?",
 			"answer": "Perkantoran/instansi, institusi pendidikan, komunitas/organisasi, serta kompleks perumahan/apartemen.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-008",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Bagaimana cara mengajukan Eazy Paspor?",
 			"answer": "Ajukan lewat WhatsApp **081217000900** atau email **cilacap@imigrasi.go.id**. Pengajuan minimal 30 pemohon dan jadwal ditentukan oleh kantor imigrasi.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-009",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan KANCIL NGAPAK?",
 			"answer": "KANCIL NGAPAK (Ngelayani Paspor nang Kabupaten) memudahkan pemohon mengajukan paspor pada hari Sabtu dan Minggu tanpa harus ke kantor imigrasi, di MPP Banyumas dan MPP Purbalingga.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-010",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa itu layanan HOTS (Haji On The Spot)?",
 			"answer": "Layanan jemput bola bagi calon jemaah haji untuk membuat atau memperpanjang paspor langsung di lokasi, tanpa antre di kantor imigrasi. Wilayah layanan: Kabupaten Cilacap, Banyumas, Purbalingga, dan Banjarnegara.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "LYK-011",
-			"category": null,
+			"category": "Layanan Khusus Kantor Imigrasi Cilacap",
 			"question": "Apa persyaratan umum layanan HOTS?",
-			"answer": "KTP dan Kartu Keluarga; Akta lahir / buku nikah / ijazah; Paspor lama (jika ada); Surat rekomendasi dari Kementerian Agama; BPIH.",
-			"verified_at": "2026-11-16"
+			"answer": "• KTP dan Kartu Keluarga\n• Akta lahir / buku nikah / ijazah\n• Paspor lama (jika ada)\n• Surat rekomendasi dari Kementerian Agama\n• BPIH.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "WNA-001",
-			"category": null,
+			"category": "Layanan WNA – Pelaporan WNA Meninggal di Indonesia",
 			"question": "Jika WNA meninggal dunia di Indonesia, ke mana harus melapor?",
 			"answer": "Laporkan ke Kantor Imigrasi terdekat dengan membawa dokumen pendukung. Pelaporan wajib paling lambat 60 hari sejak tanggal kematian. Jika lebih dari 60 hari, akan ditindaklanjuti dengan proses pemeriksaan yang dituangkan dalam berita acara pemeriksaan.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "WNA-002",
-			"category": null,
+			"category": "Layanan WNA – Pelaporan WNA Meninggal di Indonesia",
 			"question": "Siapa yang wajib melaporkan kematian WNA?",
 			"answer": "Penjamin Orang Asing (sponsor) yang tercatat dalam sistem keimigrasian.",
-			"verified_at": "2026-11-16"
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "WNA-003",
-			"category": null,
+			"category": "Layanan WNA – Pelaporan WNA Meninggal di Indonesia",
 			"question": "Apa saja dokumen untuk melaporkan kematian WNA?",
-			"answer": "Surat permohonan dari sponsor; KTP sponsor; Paspor asli dan fotokopi; Izin tinggal terakhir (ITAS/ITAP); Surat keterangan kematian dari rumah sakit atau pihak berwenang; Akta kematian dari Dinas Kependudukan dan Pencatatan Sipil.",
-			"verified_at": "2026-11-16"
+			"answer": "• Surat permohonan dari sponsor\n• KTP sponsor\n• Paspor asli dan fotokopi\n• Izin tinggal terakhir (ITAS/ITAP)\n• Surat keterangan kematian dari rumah sakit atau pihak berwenang\n• Akta kematian dari Dinas Kependudukan dan Pencatatan Sipil.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "WNA-004",
-			"category": null,
+			"category": "Layanan WNA – Pelaporan WNA Meninggal di Indonesia",
 			"question": "Bagaimana alur pelaporan kematian WNA?",
-			"answer": "Penjamin melaporkan ke rumah sakit.; Penjamin melaporkan ke Dinas Kependudukan dan Pencatatan Sipil.; Penjamin melaporkan ke Kantor Imigrasi..",
-			"verified_at": "2026-11-16"
+			"answer": "• Penjamin melaporkan ke rumah sakit\n• Penjamin melaporkan ke Dinas Kependudukan dan Pencatatan Sipil\n• Penjamin melaporkan ke Kantor Imigrasi.",
+			"verified_at": "2026-11-21"
 		},
 		{
 			"code": "KTK-001",
-			"category": null,
+			"category": "Kontak",
 			"question": "Bagaimana cara menghubungi Kantor Imigrasi Cilacap?",
-			"answer": "Call center / WhatsApp: **081217000900**; Email: **cilacap@imigrasi.go.id**.",
-			"verified_at": "2026-11-16"
+			"answer": "• Call center / WhatsApp: **081217000900**\n• Email: **cilacap@imigrasi.go.id**.",
+			"verified_at": "2026-11-21"
+		},
+		{
+			"code": "PSP-013",
+			"category": "Permohonan Paspor WNI",
+			"question": "Bagaimana cara mendaftar permohonan paspor melalui aplikasi M-Paspor?",
+			"answer": "Unduh aplikasi M-Paspor:\n• Android: https://play.google.com/store/apps/details?id=id.go.imigrasi.paspor_online\n• iOS: https://apps.apple.com/id/app/m-paspor/id1576336459\n\n**Langkah pendaftaran:**\n• Daftar dan login akun\n• Lengkapi data diri\n• Pilih jenis paspor, tanggal, dan lokasi\n• Lakukan pembayaran\n\nBatas waktu pembayaran adalah 120 menit setelah kode billing diterbitkan.\nKesalahan pengisian data dapat menyebabkan permohonan dibatalkan dan biaya tidak dapat dikembalikan.",
+			"verified_at": "2026-11-21"
+		},
+		{
+			"code": "PSP-014",
+			"category": "Permohonan Paspor WNI",
+			"question": "Apa syarat permohonan paspor yang rusak?",
+			"answer": "Permohonan paspor rusak tidak melalui aplikasi M-Paspor. Daftar dan unggah dokumen melalui https://sipantas.kanimcilacap.com/, lalu datang ke kantor imigrasi setelah permohonan terverifikasi oleh petugas.\n\n**Persyaratan:**\n• Kartu Tanda Penduduk (KTP)\n• Kartu Keluarga\n• Akte / ijazah / surat nikah (terdapat tanggal, bulan, dan tahun lahir)\n• Dokumen pendukung lainnya (rekomendasi biro umrah / BPIH, dokumen pelaut, rekomendasi perusahaan / LPK / kontrak kerja, lainnya)\n• Paspor lama\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
+		},
+		{
+			"code": "PSP-015",
+			"category": "Permohonan Paspor WNI",
+			"question": "Apa syarat penambahan nama pada paspor?",
+			"answer": "**Persyaratan:**\n• Paspor masih aktif\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Surat rekomendasi travel (umrah) atau BPIH (haji)\n• Meterai Rp10.000\nPemohon wajib datang langsung ke kantor imigrasi dengan membawa dokumen asli dan fotokopi A4 utuh.",
+			"verified_at": "2026-11-21"
+		},
+		{
+			"code": "PSP-016",
+			"category": "Permohonan Paspor WNI",
+			"question": "Apa syarat permohonan paspor beda data?",
+			"answer": "Permohonan paspor beda data (data paspor lama berbeda dengan dokumen kependudukan) tidak melalui aplikasi M-Paspor. Daftar dan unggah dokumen melalui https://sipantas.kanimcilacap.com/, lalu datang ke kantor imigrasi setelah permohonan terverifikasi oleh petugas.\n\n**Persyaratan:**\n• Kartu Tanda Penduduk (KTP)\n• Kartu Keluarga\n• Akte / ijazah / surat nikah (terdapat tanggal, bulan, dan tahun lahir)\n• Dokumen pendukung lainnya (rekomendasi biro umrah / BPIH, dokumen pelaut, rekomendasi perusahaan / LPK / kontrak kerja, lainnya)\n• Paspor lama\n• Penetapan pengadilan\nBawa berkas asli dan fotokopi ukuran A4.",
+			"verified_at": "2026-11-21"
 		}
 	]
 }

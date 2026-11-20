@@ -6,28 +6,37 @@
 
 	const title = 'Pengaduan Layanan Imigrasi Cilacap lewat WhatsApp | KANCIL SAPA';
 	const description =
-		'Cara menyampaikan pengaduan ke Kantor Imigrasi Cilacap lewat WhatsApp: pilih menu 2, isi data, dapatkan nomor tiket, lalu cek statusnya kapan saja.';
+		'Cara menyampaikan pengaduan ke Kantor Imigrasi Cilacap lewat WhatsApp: ketik 3 di menu utama, petugas membalas di chat, dan tanggapan resmi dikirim ke nomor Anda.';
 
+	// Alur yang berjalan di bot (menu 3 = antrean petugas; petugas mencatat pengaduan resmi dari dashboard).
 	const steps = [
-		{ title: 'Ketik 2 di menu utama', text: 'Lalu pilih 1 untuk membuat pengaduan baru.' },
-		{ title: 'Tulis nama lengkap', text: 'Hanya nama. Bot tidak meminta NIK atau nomor paspor.' },
 		{
-			title: 'Pilih kategori',
-			text: 'Layanan paspor, layanan WNA atau izin tinggal, pelayanan petugas, atau lainnya.'
-		},
-		{ title: 'Ceritakan kejadiannya', text: 'Tulis kronologi singkat dengan kalimat sendiri.' },
-		{
-			title: 'Lampirkan foto atau dokumen',
-			text: 'Boleh dilewati. Ketik selesai setelah semua berkas terkirim.'
+			title: 'Ketik 3 di menu utama',
+			text: 'Pilih Layanan Pengaduan (Complaint Support). Permintaan Anda masuk antrean petugas.'
 		},
 		{
-			title: 'Periksa ringkasan, lalu kirim',
-			text: 'Data tersimpan hanya jika Anda memilih kirim. Ketik batal untuk membatalkan.'
+			title: 'Tunggu giliran',
+			text: 'Bot memberi tahu nomor antrean hari ini dan posisi Anda. Ketik 1 untuk cek posisi, 2 untuk batal, atau 0 untuk kembali ke menu.'
 		},
 		{
-			title: 'Simpan nomor tiket',
-			text: 'Bot memberi nomor berformat ADU-TahunBulan-NomorUrut, misalnya ADU-202612-0001.'
+			title: 'Ceritakan kejadiannya ke petugas',
+			text: 'Petugas membalas di chat yang sama. Tulis kronologi singkat dengan kalimat sendiri.'
+		},
+		{
+			title: 'Dicatat sebagai pengaduan resmi',
+			text: 'Bila perlu, petugas mencatatnya sebagai pengaduan resmi dan Anda diberi tahu di chat.'
+		},
+		{
+			title: 'Terima tanggapan',
+			text: 'Tanggapan dikirim ke WhatsApp Anda saat pengaduan diproses dan saat selesai.'
 		}
+	];
+
+	const categories = [
+		{ name: 'Layanan paspor', priority: 'Sedang' },
+		{ name: 'Layanan WNA atau izin tinggal', priority: 'Sedang' },
+		{ name: 'Pelayanan petugas', priority: 'Tinggi' },
+		{ name: 'Lainnya', priority: 'Rendah' }
 	];
 
 	const jsonLd = [
@@ -49,18 +58,18 @@
 		<Breadcrumbs items={[{ href: '/', label: 'Beranda' }, { label: 'Pengaduan' }]} />
 		<h1>Sampaikan pengaduan lewat WhatsApp</h1>
 		<p class="lead">
-			Pengaduan masuk ke dashboard petugas {site.office} dan Anda mendapat nomor tiket.
+			Pengaduan ditangani langsung oleh petugas {site.office}, di chat yang sama.
 		</p>
 		<div class="actions">
-			<WaButton index={0} text="Halo, saya ingin membuat pengaduan" />
-			<WaButton index={1} variant="secondary" text="Halo, saya ingin membuat pengaduan" />
+			<WaButton index={0} text="Halo, saya ingin menyampaikan pengaduan" />
+			<WaButton index={1} variant="secondary" text="Halo, saya ingin menyampaikan pengaduan" />
 		</div>
 	</div>
 
 	<section class="section" aria-labelledby="langkah-h">
 		<div class="cols">
 			<div class="col-a">
-				<h2 id="langkah-h">Tujuh langkah</h2>
+				<h2 id="langkah-h">Lima langkah</h2>
 				<p class="lead spaced">Semua dilakukan di percakapan WhatsApp, tanpa formulir tambahan.</p>
 			</div>
 			<div class="col-b">
@@ -78,19 +87,41 @@
 		</div>
 	</section>
 
-	<section class="section" aria-labelledby="status-h">
+	<section class="section" aria-labelledby="kategori-h">
 		<div class="cols">
 			<div class="col-a">
-				<h2 id="status-h">Cek status pengaduan</h2>
+				<h2 id="kategori-h">Empat kategori pengaduan</h2>
+				<p class="lead spaced">
+					Petugas memilih kategori saat mencatat pengaduan. Prioritas menentukan urutan tindak
+					lanjut.
+				</p>
+			</div>
+			<div class="col-b">
+				<dl class="facts">
+					{#each categories as c (c.name)}
+						<div>
+							<dt>{c.name}</dt>
+							<dd>Prioritas {c.priority}</dd>
+						</div>
+					{/each}
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="jam-h">
+		<div class="cols">
+			<div class="col-a">
+				<h2 id="jam-h">Jam layanan petugas</h2>
 			</div>
 			<div class="col-b prose">
+				<p>{site.hours.staff}.</p>
 				<p>
-					Ketik 2 di menu utama, pilih 2 untuk cek status, lalu masukkan nomor tiket. Status yang
-					tampil adalah Baru, Diproses, atau Selesai, beserta tanggapan petugas.
+					Di luar jam layanan, permintaan Anda tetap tercatat dalam antrean petugas, sama seperti
+					pemberitahuan dari bot.
 				</p>
-				<p>Status hanya dapat dilihat dari nomor WhatsApp yang dipakai saat membuat pengaduan.</p>
 				<p>
-					Untuk hal mendesak, hubungi petugas di <a href="/kontak">kontak resmi</a> pada jam layanan.
+					Bot tidak pernah meminta NIK atau nomor paspor. Mohon tidak mengirimkannya di percakapan.
 				</p>
 			</div>
 		</div>

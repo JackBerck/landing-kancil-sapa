@@ -14,26 +14,46 @@ pnpm lint && pnpm check && pnpm test
 
 ## Sumber isi
 
-| Apa                                            | Di mana                                                                            |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Nomor WhatsApp, email, alamat, jam layanan     | `src/lib/site.ts` (satu tempat)                                                    |
-| Jawaban FAQ (hanya yang terverifikasi + aktif) | `src/lib/content/faqs.json`                                                        |
-| Pengelompokan FAQ jadi halaman `/layanan/*`    | `src/lib/faq.ts` (kelompok menurut awalan kode: PSP, ANK, AMB, BYR, TRF, LYK, WNA) |
-| Teks beranda, pengaduan, tentang, privasi      | file `+page.svelte` masing-masing                                                  |
-| Desain (token warna, font, ukuran)             | `src/lib/styles/tokens.css`, `src/routes/app.css`                                  |
+| Apa                                         | Di mana                                                                            |
+| ------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Nomor WhatsApp, email, alamat, jam layanan  | `src/lib/site.ts` (satu tempat)                                                    |
+| Jawaban FAQ (data bot, `pnpm faq:sync`)     | `src/lib/content/faqs.json`                                                        |
+| Pengelompokan FAQ jadi halaman `/layanan/*` | `src/lib/faq.ts` (kelompok menurut awalan kode: PSP, ANK, AMB, BYR, TRF, LYK, WNA) |
+| Teks beranda, pengaduan, tentang, privasi   | file `+page.svelte` masing-masing                                                  |
+| Desain (token warna, font, ukuran)          | `src/lib/styles/tokens.css`, `src/routes/app.css`                                  |
 
 ### Memperbarui FAQ
 
-Sumber utama adalah Laravel. Di folder `Project_Magang_KANCIL`:
+Sumber utama adalah data FAQ bot di repo Laravel (`Project_Magang_KANCIL/database/data/faqs.php`), yang dikalibrasi ke Inventarisasi FAQ 3.1 dan feedback Imigrasi. Seluruh FAQ di produksi sudah terverifikasi + aktif (21 November 2026). Dengan kedua repo bersebelahan:
 
 ```sh
-php artisan faq:activate      # sekali: tandai FAQ terverifikasi + aktif (setelah petugas memastikan)
-php artisan faq:export        # tulis ../landing/src/lib/content/faqs.json (hanya FAQ aktif)
+pnpm faq:sync        # tulis src/lib/content/faqs.json dari data bot (format WhatsApp diubah otomatis)
+pnpm test            # termasuk cek bahwa faqs.json dan menu landing sama dengan bot (hanya bila repo bot ada)
 ```
 
-Lalu `pnpm build` dan deploy. Cadangan tanpa database: `pnpm faq:doc` membaca `Dokumen/Dokumen_Inventarisasi_FAQ.docx.md` dan menganggap semua FAQ terverifikasi.
+Lalu `pnpm build` dan `pnpm test:build`. Bila isi FAQ diubah petugas lewat dashboard, salin dulu perubahannya ke `faqs.php` di repo bot agar kedua sisi tetap sama. Cadangan lama: `pnpm faq:doc` (dari dokumen Inventarisasi, sudah usang).
+
+Menu bot (beranda dan contoh chat) ada di `botMenu` pada `src/lib/site.ts`. Test `src/lib/content.test.ts` membandingkannya dengan `BotScript::MENUS` di repo bot.
 
 Bila ada kelompok FAQ baru, tambahkan di `groups` pada `src/lib/faq.ts` (slug, awalan kode, judul, deskripsi). Sitemap ikut otomatis.
+
+### Chat bot di situs (pojok kanan bawah)
+
+Versi web dari menu bot WhatsApp: menu, jawaban, pesan standar, dan jam layanan diekspor dari kode bot (`BotScript`, `MenuAnswerResolver`, `BusinessHours`) sehingga teksnya identik.
+
+```sh
+pnpm bot:sync        # tulis src/lib/chatbot/bot-script.json dari repo bot (butuh PHP + vendor Laravel)
+```
+
+- Logika: `src/lib/chatbot/engine.ts` (meniru `BotEngine` bagian menu). Hubungi petugas (menu 3, 88, "1" setelah jawaban, cek status) diarahkan ke WhatsApp resmi, karena situs statis tidak punya antrean petugas. Teks bebas tidak dijawab AI, diperlakukan sebagai salah input seperti bot tanpa AI.
+- Situs tetap tanpa hidrasi (`csr = false`). Widget dibundel terpisah (`vite.chatbot.config.ts`) menjadi `/chatbot/widget.js?v=<hash>`; `pnpm build` menjalankannya otomatis. Gaya ada di `app.css` (`.chatbot*`).
+- CSP harus `script-src 'self'` (lihat `deploy/kancilsapa-security-headers.conf`; salin ke `/etc/nginx/snippets/` di VPS lalu reload nginx). Tanpa itu, browser memblokir widget.
+- Riwayat chat hanya di `sessionStorage` browser, tidak dikirim ke server.
+- Test: `src/lib/chatbot/engine.test.ts` (setiap jalur menu, jam layanan dibandingkan dengan contoh dari `BusinessHours`), dan E2E `pnpm test:e2e` (Playwright, desktop + ponsel; jalankan `pnpm build` dulu).
+
+### Pemeriksaan hasil build
+
+`pnpm test:build` (dijalankan di CI setelah `pnpm build`) membaca HTML prerender di `build/` dan gagal bila halaman memuat informasi usang: menu lama, alur pengaduan swalayan, format `CEK#`, angka PNBP gabungan, atau tanda `**` mentah.
 
 ### Ikon dan gambar OG
 

@@ -28,14 +28,14 @@ export const faqs: Faq[] = (data.faqs as Faq[])
 export const groups: FaqGroup[] = [
 	{
 		slug: 'paspor-wni',
-		blurb: 'Baru, ganti, hilang, dan tujuan',
+		blurb: 'Baru, ganti, hilang, rusak, beda data',
 		prefix: 'PSP',
 		title: 'Syarat paspor WNI',
 		heading: 'Syarat paspor WNI di Cilacap',
 		description:
-			'Syarat paspor baru, penggantian, paspor hilang, dan paspor menurut tujuan (wisata, umrah, haji, pelaut, CPMI) di Kantor Imigrasi Cilacap.',
+			'Syarat paspor baru, penggantian, hilang, rusak, beda data, penambahan nama, M-Paspor, dan paspor menurut tujuan di Kantor Imigrasi Cilacap.',
 		intro:
-			'Persyaratan permohonan paspor bagi Warga Negara Indonesia: paspor baru, penggantian, paspor hilang, affidavit, dan syarat menurut tujuan perjalanan.'
+			'Persyaratan paspor WNI: baru, penggantian, hilang, rusak, beda data (lewat SIPANTAS), penambahan nama, pendaftaran M-Paspor, affidavit, dan syarat menurut tujuan. Tarif dan denda ada di halaman Tarif PNBP.'
 	},
 	{
 		slug: 'paspor-anak',
@@ -111,10 +111,17 @@ export const groupOfCode = (code: string) => groups.find((g) => code.startsWith(
 export const faqByCode = (code: string) => faqs.find((f) => f.code === code);
 export const anchorOf = (code: string) => code.toLowerCase();
 
-/** Teks polos jawaban (tanpa tanda **), untuk JSON-LD dan meta. */
+/** Teks polos jawaban (tanpa tanda **, butir jadi "; "), untuk JSON-LD dan meta. */
 export function plainAnswer(answer: string): string {
 	return answer
 		.replace(/\*\*/g, '')
+		.replace(/\r\n?/g, '\n')
+		.replace(/\n\s*[•▪✅-]\s*/gu, '; ')
+		.replace(/^\s*[•▪✅-]\s*/u, '')
+		.replace(/:\s*;\s*/g, ': ')
+		.replace(/\s*\n+\s*/g, ' ')
 		.replace(/\.;/g, ';')
-		.replace(/\.{2,}/g, '.');
+		.replace(/\.{2,}/g, '.')
+		.replace(/\s{2,}/g, ' ')
+		.trim();
 }

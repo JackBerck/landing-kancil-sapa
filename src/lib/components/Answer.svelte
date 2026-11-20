@@ -7,7 +7,9 @@
 
 {#snippet inline(parts: Part[])}
 	{#each parts as part, i (i)}
-		{#if part.bold}<strong>{part.text}</strong>{:else}{part.text}{/if}
+		{#if part.href}<a href={part.href} target="_blank" rel="noopener noreferrer"
+				>{#if part.bold}<strong>{part.text}</strong>{:else}{part.text}{/if}</a
+			>{:else if part.bold}<strong>{part.text}</strong>{:else}{part.text}{/if}
 	{/each}
 {/snippet}
 
