@@ -239,7 +239,11 @@ export class ChatEngine {
 				? script.placePrompt.replace('{{NOMOR}}', this.state.statusNumber)
 				: script.statusPrompt;
 		}
-		if (this.state.answer) return script.answerFooter;
+		if (this.state.answer) {
+			// Menu WNA (path 1, 1>...): footer dwibahasa, sama dengan BotScript::isForeignerMenu().
+			const path = menus[this.state.menu]?.path ?? '';
+			return path === '1' || path.startsWith('1>') ? script.answerFooterEn : script.answerFooter;
+		}
 		return this.state.menu === 'M-00' ? mainMenuText(at) : (menus[this.state.menu].text ?? '');
 	}
 }

@@ -119,8 +119,29 @@ describe('setiap jalur menu menampilkan teks bot yang sama', () => {
 			'------------------------\n\nButuh bantuan lebih lanjut?\n\n*Ketik 9* untuk kembali ke menu sebelumnya\n' +
 				'*Ketik 0* untuk kembali ke menu utama\n*Ketik 1* untuk menghubungi Petugas\n\n*Terima kasih.*'
 		);
-		for (const text of Object.values(answers))
-			expect(text.endsWith(script.answerFooter)).toBe(true);
+		for (const [path, text] of Object.entries(answers))
+			expect(
+				text.endsWith(path.startsWith('1>') ? script.answerFooterEn : script.answerFooter)
+			).toBe(true);
+	});
+
+	it('footer jawaban menu WNA dwibahasa (Inggris di dalam kurung), menu Paspor tetap Indonesia', () => {
+		expect(script.answerFooterEn).toBe(
+			'------------------------\n\nButuh bantuan lebih lanjut? _(Need further assistance?)_\n\n' +
+				'*Ketik 9* untuk kembali ke menu sebelumnya _(Type 9 to return to the previous menu)_\n' +
+				'*Ketik 0* untuk kembali ke menu utama _(Type 0 to return to the main menu)_\n' +
+				'*Ketik 1* untuk menghubungi Petugas _(Type 1 to contact an officer)_\n\n' +
+				'*Terima kasih.* _(Thank you.)_'
+		);
+		expect(last(['2', '1', '1', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooterEn}`
+		);
+		expect(last(['2', '3', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooterEn}`
+		);
+		expect(last(['1', '2', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooter}`
+		);
 	});
 
 	it('tarif WNA bisa dibaca berurutan lewat 9 (laporan Imigrasi 23 Nov)', () => {

@@ -98,6 +98,7 @@ test('setelah jawaban tarif, 9 kembali ke daftar tarif (laporan Imigrasi 23 Nov)
 	await say(page, '1');
 	await expect(lastBot(page)).toContainText('Ketik 9 untuk kembali ke menu sebelumnya');
 	await expect(lastBot(page)).toContainText('Ketik 0 untuk kembali ke menu utama');
+	await expect(lastBot(page)).toContainText('(Type 9 to return to the previous menu)');
 	await say(page, '9');
 	await expect(lastBot(page)).toContainText('Ketik 7 untuk kembali ke menu sebelumnya');
 	await expect(lastBot(page)).not.toContainText('Selamat Datang');
