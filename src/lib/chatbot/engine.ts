@@ -135,7 +135,12 @@ export class ChatEngine {
 		return this.invalidInput(at);
 	}
 
+	/** Setelah jawaban: 9 = submenu tempat jawaban dipilih (feedback Imigrasi 23 Nov), 0 = menu utama, 1 = Petugas. */
 	private answerAction(command: string, text: string, at: Date): BotReply {
+		if (command === '9') {
+			this.state.invalid = 0;
+			return this.showMenu(menus[this.state.menu] ? this.state.menu : 'M-00', at);
+		}
 		if (['0', '99', 'menu'].includes(command)) return this.goMainMenu(at);
 		if (['1', '88'].includes(command)) return this.escalate(at);
 		if (/^\d+$/.test(command)) return this.invalidInput(at);
@@ -234,7 +239,11 @@ export class ChatEngine {
 				? script.placePrompt.replace('{{NOMOR}}', this.state.statusNumber)
 				: script.statusPrompt;
 		}
-		if (this.state.answer) return script.answerFooter;
+		if (this.state.answer) {
+			// Menu WNA (path 1, 1>...): footer dwibahasa, sama dengan BotScript::isForeignerMenu().
+			const path = menus[this.state.menu]?.path ?? '';
+			return path === '1' || path.startsWith('1>') ? script.answerFooterEn : script.answerFooter;
+		}
 		return this.state.menu === 'M-00' ? mainMenuText(at) : (menus[this.state.menu].text ?? '');
 	}
 }

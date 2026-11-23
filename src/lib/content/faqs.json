@@ -1,12 +1,12 @@
 {
-	"generated_at": "2026-11-20T19:01:18.713Z",
+	"generated_at": "2026-11-23T03:33:27.186Z",
 	"source": "laravel",
 	"faqs": [
 		{
 			"code": "PSP-001",
 			"category": "Permohonan Paspor WNI",
 			"question": "Apa saja persyaratan untuk membuat paspor baru?",
-			"answer": "KTP elektronik, Kartu Keluarga, dan salah satu dari akta lahir/ijazah/buku nikah. Bawa berkas asli dan fotokopi ukuran A4.",
+			"answer": "**Persyaratan:**\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Bukti permohonan M-Paspor\nBawa berkas asli dan fotokopi ukuran A4.",
 			"verified_at": "2026-11-21"
 		},
 		{
@@ -117,7 +117,7 @@
 		{
 			"code": "ANK-005",
 			"category": "Paspor Anak dan Kondisi Keluarga",
-			"question": "Siapa yang menandatangani surat pernyataan jika kedua orang tua bercerai hidup?",
+			"question": "Siapa yang menandatangani surat pernyataan bermeterai jika kedua orang tua bercerai hidup?",
 			"answer": "Jika ada penetapan pengadilan tentang hak asuh: orang tua pemegang hak asuh. Jika permohonan diajukan orang tua yang tidak memegang hak asuh, atau perceraian diputus tanpa penetapan hak asuh: kedua orang tua. Jika salah satu orang tua tidak diketahui keberadaannya: orang tua yang diketahui keberadaannya, disertai keterangan bahwa salah satu orang tua tidak ditemukan.",
 			"verified_at": "2026-11-21"
 		},

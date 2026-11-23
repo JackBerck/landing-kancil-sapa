@@ -72,7 +72,26 @@ describe('setiap jalur menu menampilkan teks bot yang sama', () => {
 		expect(paths.map(([, p]) => p).sort()).toEqual(Object.keys(answers).sort());
 	});
 
+	/** Submenu tempat jawaban dipilih (dari bot-script.json, sama dengan BotScript::MENUS). */
+	const parentOf = (path: string) =>
+		Object.entries(script.menus).find(([, menu]) =>
+			Object.values(menu.options).some((option) => option.target === `ANS:${path}`)
+		)![0];
+
 	for (const [inputs, path] of paths) {
+		it(`${inputs.join(' > ')} = ${path}, lalu 9 = menu sebelumnya`, () => {
+			// Feedback Imigrasi 23 Nov: 9 setelah jawaban = submenu asal, bukan menu utama.
+			const parent = parentOf(path);
+			const back = last([...inputs, '9']);
+			expect(back.codes).toEqual([parent]);
+			expect(back.text).toBe(
+				parent === 'M-00'
+					? mainMenuText(WED_10)
+					: script.menus[parent as keyof typeof script.menus].text
+			);
+			expect(last([...inputs, '9', inputs.at(-1)!]).codes).toEqual([`ANS-${path}`]);
+		});
+
 		it(`${inputs.join(' > ')} = ${path}, lalu 0 = menu utama`, () => {
 			const reply = last(inputs);
 			expect(reply.codes).toEqual([`ANS-${path}`]);
@@ -93,6 +112,86 @@ describe('setiap jalur menu menampilkan teks bot yang sama', () => {
 		expect(last(['2', '1', '7']).codes).toEqual(['M-08']);
 		expect(last(['2', '2', '4']).codes).toEqual(['M-08']);
 		expect(last(['2', '4']).codes).toEqual(['M-00']);
+	});
+
+	it('footer jawaban: 9 menu sebelumnya, 0 menu utama, 1 petugas (sama dengan bot)', () => {
+		expect(script.answerFooter).toBe(
+			'------------------------\n\nButuh bantuan lebih lanjut?\n\n*Ketik 9* untuk kembali ke menu sebelumnya\n' +
+				'*Ketik 0* untuk kembali ke menu utama\n*Ketik 1* untuk menghubungi Petugas\n\n*Terima kasih.*'
+		);
+		for (const [path, text] of Object.entries(answers))
+			expect(
+				text.endsWith(path.startsWith('1>') ? script.answerFooterEn : script.answerFooter)
+			).toBe(true);
+	});
+
+	it('footer jawaban menu WNA dwibahasa (Inggris di dalam kurung), menu Paspor tetap Indonesia', () => {
+		expect(script.answerFooterEn).toBe(
+			'------------------------\n\nButuh bantuan lebih lanjut? _(Need further assistance?)_\n\n' +
+				'*Ketik 9* untuk kembali ke menu sebelumnya _(Type 9 to return to the previous menu)_\n' +
+				'*Ketik 0* untuk kembali ke menu utama _(Type 0 to return to the main menu)_\n' +
+				'*Ketik 1* untuk menghubungi Petugas _(Type 1 to contact an officer)_\n\n' +
+				'*Terima kasih.* _(Thank you.)_'
+		);
+		expect(last(['2', '1', '1', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooterEn}`
+		);
+		expect(last(['2', '3', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooterEn}`
+		);
+		expect(last(['1', '2', '5']).text).toBe(
+			`${script.messages['MSG-01']}\n\n${script.answerFooter}`
+		);
+	});
+
+	it('tarif WNA bisa dibaca berurutan lewat 9 (laporan Imigrasi 23 Nov)', () => {
+		const { replies } = run([
+			'2',
+			'1',
+			'1',
+			'9',
+			'2',
+			'9',
+			'3',
+			'9',
+			'4',
+			'9',
+			'5',
+			'9',
+			'6',
+			'9',
+			'7'
+		]);
+		expect(replies.map((r) => r.codes[0])).toEqual([
+			'M-08',
+			'M-09',
+			'ANS-1>1>1',
+			'M-09',
+			'ANS-1>1>2',
+			'M-09',
+			'ANS-1>1>3',
+			'M-09',
+			'ANS-1>1>4',
+			'M-09',
+			'ANS-1>1>5',
+			'M-09',
+			'ANS-1>1>6',
+			'M-09',
+			'M-08'
+		]);
+	});
+
+	it('9 mereset hitungan salah input setelah jawaban', () => {
+		expect(last(['2', '1', '1', '5', '5', '9', '8']).codes).toEqual(['MSG-01']);
+	});
+
+	it('Paspor Baru = daftar persyaratan + bukti permohonan M-Paspor; Paspor Anak = bermeterai', () => {
+		expect(last(['1', '2']).text).toContain(
+			'*Persyaratan:*\n• KTP elektronik\n• Kartu Keluarga\n• Akta lahir / ijazah / buku nikah\n• Bukti permohonan M-Paspor\n'
+		);
+		expect(last(['1', '4']).text).toContain(
+			'*Siapa yang menandatangani surat pernyataan bermeterai jika kedua orang tua bercerai hidup?*'
+		);
 	});
 
 	it('PNBP terpisah dan SIPANTAS di jawaban paspor rusak', () => {
@@ -133,22 +232,28 @@ describe('hubungi petugas diarahkan ke WhatsApp', () => {
 });
 
 describe('cek status paspor (nomor lalu tempat permohonan)', () => {
+	it('contoh nomor permohonan berawalan kode kantor 1568 (feedback Imigrasi 23 Nov)', () => {
+		expect(script.statusPrompt).toContain('Contoh: 1568000000012345\n');
+		expect(script.statusPrompt).not.toContain('1498');
+		expect(last(['1', '11', '9']).codes).toEqual(['MSG-01']);
+	});
+
 	it('prompt sama dengan bot, lalu pilih tempat', () => {
 		expect(last(['1', '11']).text).toBe(script.statusPrompt);
-		const place = last(['1', '11', '1498 0000 0001 2345']);
+		const place = last(['1', '11', '1568 0000 0001 2345']);
 		expect(place.codes).toEqual(['STATUS-PLACE']);
-		expect(place.text).toBe(script.placePrompt.replace('{{NOMOR}}', '1498000000012345'));
+		expect(place.text).toBe(script.placePrompt.replace('{{NOMOR}}', '1568000000012345'));
 
-		const done = last(['1', '11', '1498000000012345', '2']);
+		const done = last(['1', '11', '1568000000012345', '2']);
 		expect(done.codes).toEqual(['WA']);
 		expect(done.handoff?.summary).toBe(
-			'Nomor permohonan 1498000000012345, tempat permohonan MPP Banyumas'
+			'Nomor permohonan 1568000000012345, tempat permohonan MPP Banyumas'
 		);
-		expect(done.text).toContain('nomor permohonan *1498000000012345*');
+		expect(done.text).toContain('nomor permohonan *1568000000012345*');
 	});
 
 	it('nomor dan tempat dalam satu pesan', () => {
-		const reply = last(['1', '11', '1498000000012345 Ngapak Purbalingga']);
+		const reply = last(['1', '11', '1568000000012345 Ngapak Purbalingga']);
 		expect(reply.handoff?.summary).toContain('Ngapak Purbalingga');
 	});
 
@@ -161,8 +266,8 @@ describe('cek status paspor (nomor lalu tempat permohonan)', () => {
 	});
 
 	it('tempat tidak dikenal = salah input; 0 = menu utama', () => {
-		expect(last(['1', '11', '1498000000012345', '9']).codes).toEqual(['MSG-01']);
-		expect(last(['1', '11', '1498000000012345', '0']).codes).toEqual(['M-00']);
+		expect(last(['1', '11', '1568000000012345', '9']).codes).toEqual(['MSG-01']);
+		expect(last(['1', '11', '1568000000012345', '0']).codes).toEqual(['M-00']);
 	});
 });
 
@@ -216,7 +321,7 @@ describe('helper', () => {
 		expect(normalize('  *1.* ')).toBe('1');
 		expect(isGreeting('Assalamualaikum pak')).toBe(true);
 		expect(isGreeting('paspor hilang')).toBe(false);
-		expect(applicationPlace('1498 kancil ngapak banyumas')[0]).toBe('Ngapak Banyumas');
+		expect(applicationPlace('1568 kancil ngapak banyumas')[0]).toBe('Ngapak Banyumas');
 		expect(applicationPlace('banyumasan')[0]).toBeNull();
 	});
 });

@@ -55,7 +55,8 @@ foreach (BotScript::ANSWERS as $path => $definition) {
         }
     }
 
-    $answers[$path] = BotScript::answer($body);
+    // Menu WNA (jalur 1>...) memakai footer dwibahasa, sama dengan BotEngine::englishFooter().
+    $answers[$path] = BotScript::answer($body, str_starts_with($path, '1>'));
 }
 
 $menus = [];
@@ -93,6 +94,7 @@ echo json_encode([
     'answers' => $answers,
     'mainMenu' => $mainMenu,
     'answerFooter' => BotScript::answerFooter(),
+    'answerFooterEn' => BotScript::answerFooter(english: true),
     'statusPrompt' => BotScript::statusPrompt(),
     'placePrompt' => BotScript::placePrompt('{{NOMOR}}'),
     'applicationPlaces' => config('kancil.application_places'),
