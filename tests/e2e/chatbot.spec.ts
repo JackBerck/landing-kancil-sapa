@@ -89,6 +89,24 @@ test('menu Izin Tinggal sesuai dokumen skenario: tarif ITAS dan lokasi', async (
 	).toBeVisible();
 });
 
+test('setelah jawaban tarif, 9 kembali ke daftar tarif (laporan Imigrasi 23 Nov)', async ({
+	page
+}) => {
+	await openChat(page);
+	await say(page, '2');
+	await say(page, '1');
+	await say(page, '1');
+	await expect(lastBot(page)).toContainText('Ketik 9 untuk kembali ke menu sebelumnya');
+	await expect(lastBot(page)).toContainText('Ketik 0 untuk kembali ke menu utama');
+	await say(page, '9');
+	await expect(lastBot(page)).toContainText('Ketik 7 untuk kembali ke menu sebelumnya');
+	await expect(lastBot(page)).not.toContainText('Selamat Datang');
+	await say(page, '2');
+	await expect(lastBot(page)).toContainText('Izin Tinggal Kunjungan');
+	await say(page, '0');
+	await expect(lastBot(page)).toContainText('Selamat Datang');
+});
+
 test('pengaduan (menu 3) dan 88 diarahkan ke WhatsApp resmi', async ({ page }) => {
 	await openChat(page);
 	await say(page, '3');
@@ -112,11 +130,11 @@ test('cek status: nomor permohonan lalu tempat permohonan', async ({ page }) => 
 	await expect(lastBot(page)).toContainText(
 		'Tempat permohonan: Imigrasi Cilacap / MPP Banyumas / MPP Purbalingga / Ngapak Banyumas / Ngapak Purbalingga'
 	);
-	await say(page, '1498000000012345');
-	await expect(lastBot(page)).toContainText('Nomor permohonan: 1498000000012345');
+	await say(page, '1568000000012345');
+	await expect(lastBot(page)).toContainText('Nomor permohonan: 1568000000012345');
 	await say(page, '2');
 	await expect(lastBot(page)).toContainText(
-		'kirim nomor permohonan 1498000000012345, lalu pilih tempat permohonan MPP Banyumas'
+		'kirim nomor permohonan 1568000000012345, lalu pilih tempat permohonan MPP Banyumas'
 	);
 });
 

@@ -135,7 +135,12 @@ export class ChatEngine {
 		return this.invalidInput(at);
 	}
 
+	/** Setelah jawaban: 9 = submenu tempat jawaban dipilih (feedback Imigrasi 23 Nov), 0 = menu utama, 1 = Petugas. */
 	private answerAction(command: string, text: string, at: Date): BotReply {
+		if (command === '9') {
+			this.state.invalid = 0;
+			return this.showMenu(menus[this.state.menu] ? this.state.menu : 'M-00', at);
+		}
 		if (['0', '99', 'menu'].includes(command)) return this.goMainMenu(at);
 		if (['1', '88'].includes(command)) return this.escalate(at);
 		if (/^\d+$/.test(command)) return this.invalidInput(at);
