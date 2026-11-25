@@ -7,10 +7,9 @@ export const site = {
 	dashboardUrl: 'https://dashboard.kancilsapa.com',
 	locale: 'id_ID',
 	email: 'cilacap@imigrasi.go.id',
-	/** Dua nomor WhatsApp bot. Format wa.me: kode negara tanpa plus. */
+	/** Nomor WhatsApp resmi bot (hanya milik Imigrasi). Format wa.me: kode negara tanpa plus. */
 	whatsapp: [
-		{ id: 'utama', number: '6281217000900', display: '0812-1700-0900', raw: '081217000900' },
-		{ id: 'kedua', number: '6285184542256', display: '0851-8454-2256', raw: '085184542256' }
+		{ id: 'utama', number: '6281217000900', display: '0812-1700-0900', raw: '081217000900' }
 	],
 	address: {
 		street: 'Jl. Urip Sumoharjo No.249',

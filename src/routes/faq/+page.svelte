@@ -71,8 +71,7 @@
 		<h2 id="belum-h">Belum ketemu jawabannya?</h2>
 		<p class="lead spaced">Tanyakan ke bot atau hubungi petugas lewat kontak resmi.</p>
 		<div class="actions spaced-l">
-			<WaButton index={0} />
-			<WaButton index={1} variant="secondary" />
+			<WaButton />
 		</div>
 	</section>
 </div>

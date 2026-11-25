@@ -2,15 +2,14 @@
 	import { site, waUrl } from '#lib/site';
 
 	interface Props {
-		index?: 0 | 1;
 		variant?: 'primary' | 'secondary';
 		size?: 'normal' | 'small';
 		text?: string;
 		label?: string;
 	}
 
-	let { index = 0, variant = 'primary', size = 'normal', text = 'Halo', label }: Props = $props();
-	const wa = $derived(site.whatsapp[index]);
+	let { variant = 'primary', size = 'normal', text = 'Halo', label }: Props = $props();
+	const wa = $derived(site.whatsapp[0]);
 </script>
 
 <a

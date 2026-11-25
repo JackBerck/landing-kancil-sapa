@@ -18,6 +18,6 @@
 	<p class="lead">Alamat yang Anda buka tidak ada atau sudah dipindahkan.</p>
 	<div class="actions">
 		<a class="btn btn--primary" href="/">Ke beranda</a>
-		<WaButton index={0} variant="secondary" />
+		<WaButton variant="secondary" />
 	</div>
 </div>

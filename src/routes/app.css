@@ -1129,6 +1129,7 @@ body {
 }
 
 .contact-grid {
+	max-inline-size: 26rem; /* satu kartu nomor: jangan melebar penuh */
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 	gap: var(--space-lg);

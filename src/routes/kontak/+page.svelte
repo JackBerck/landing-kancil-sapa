@@ -29,22 +29,22 @@
 	<div class="page-head">
 		<Breadcrumbs items={[{ href: '/', label: 'Beranda' }, { label: 'Kontak' }]} />
 		<h1>Kontak dan jam layanan</h1>
-		<p class="lead">Dua nomor WhatsApp resmi. Bot menjawab {site.hours.bot}.</p>
+		<p class="lead">Nomor WhatsApp resmi. Bot menjawab {site.hours.bot}.</p>
 	</div>
 
 	<section class="section" aria-labelledby="wa-h">
 		<h2 class="visually-hidden" id="wa-h">Nomor WhatsApp</h2>
 		<div class="contact-grid">
 			{#each site.whatsapp as wa, i (wa.id)}
-				<div class="contact-card plastic tint-{i === 0 ? 1 : 3}">
-					<h3>Nomor {i + 1}</h3>
+				<div class="contact-card plastic tint-1">
+					<h3>WhatsApp</h3>
 					<p class="lead">{wa.display}</p>
 					<div class="qr" role="img" aria-label="Kode QR untuk membuka WhatsApp {wa.display}">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{@html data.qrs[i].svg}
 					</div>
 					<div class="actions">
-						<WaButton index={i === 0 ? 0 : 1} />
+						<WaButton />
 					</div>
 				</div>
 			{/each}

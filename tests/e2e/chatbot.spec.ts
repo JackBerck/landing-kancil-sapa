@@ -117,7 +117,6 @@ test('pengaduan (menu 3) dan 88 diarahkan ke WhatsApp resmi', async ({ page }) =
 		'href',
 		/^https:\/\/wa\.me\/6281217000900/
 	);
-	await expect(handoff.getByRole('link', { name: 'WhatsApp 0851-8454-2256' })).toBeVisible();
 
 	await say(page, '1');
 	await say(page, '88');
