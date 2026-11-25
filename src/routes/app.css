@@ -1129,23 +1129,31 @@ body {
 }
 
 .contact-grid {
-	max-inline-size: 26rem; /* satu kartu nomor: jangan melebar penuh */
+	max-inline-size: 38rem; /* satu kartu nomor: jangan melebar penuh */
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 	gap: var(--space-lg);
 }
+/* QR di kiri, nomor + tombol di kanan; di layar sempit menumpuk */
 .contact-card {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-lg);
+	padding: var(--space-lg);
+}
+.contact-card__body {
 	display: grid;
-	gap: var(--space-md);
-	align-content: start;
-	padding: var(--space-xl);
+	flex: 1 1 14rem;
+	gap: var(--space-sm);
+	align-content: center;
 }
 .contact-card h3 {
 	font-size: var(--text-xl);
 }
 .qr {
-	inline-size: 176px;
-	block-size: 176px;
+	flex: none;
+	inline-size: 160px;
+	block-size: 160px;
 	padding: var(--space-sm);
 	background: var(--glint);
 	border-radius: var(--radius-input);

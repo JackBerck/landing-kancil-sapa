@@ -37,14 +37,16 @@
 		<div class="contact-grid">
 			{#each site.whatsapp as wa, i (wa.id)}
 				<div class="contact-card plastic tint-1">
-					<h3>WhatsApp</h3>
-					<p class="lead">{wa.display}</p>
 					<div class="qr" role="img" aria-label="Kode QR untuk membuka WhatsApp {wa.display}">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{@html data.qrs[i].svg}
 					</div>
-					<div class="actions">
-						<WaButton />
+					<div class="contact-card__body">
+						<h3>WhatsApp</h3>
+						<p class="lead">{wa.display}</p>
+						<div class="actions">
+							<WaButton />
+						</div>
 					</div>
 				</div>
 			{/each}
