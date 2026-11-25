@@ -9,7 +9,7 @@
 	const steps = [
 		{
 			title: 'Buka WhatsApp',
-			text: 'Kirim pesan ke salah satu nomor resmi. Cukup ketik "Halo".'
+			text: 'Kirim pesan ke nomor resmi. Cukup ketik "Halo".'
 		},
 		{
 			title: 'Ketik angka',
@@ -73,8 +73,7 @@
 			<h1>Layanan imigrasi Cilacap, lewat WhatsApp</h1>
 			<p class="lead">Tanya syarat, tarif, dan cara bayar paspor kapan saja lewat chat.</p>
 			<div class="actions">
-				<WaButton index={0} />
-				<WaButton index={1} variant="secondary" />
+				<WaButton />
 			</div>
 			<ul class="hero__note">
 				<li>Bot aktif {site.hours.bot}</li>
@@ -372,11 +371,10 @@
 				<div class="col-a">
 					<h2 id="mulai-h">Mulai lewat WhatsApp</h2>
 					<p class="lead spaced">
-						Pilih salah satu dari dua nomor resmi. Bot menjawab {site.hours.bot}.
+						Chat ke nomor resmi kami. Bot menjawab {site.hours.bot}.
 					</p>
 					<div class="actions spaced-l">
-						<WaButton index={0} />
-						<WaButton index={1} variant="secondary" />
+						<WaButton />
 					</div>
 				</div>
 				<div class="col-b">

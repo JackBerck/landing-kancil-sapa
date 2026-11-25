@@ -67,8 +67,7 @@
 			Tanyakan lewat WhatsApp. Untuk kasus khusus, ketik 88 agar diteruskan ke petugas.
 		</p>
 		<div class="actions spaced-l">
-			<WaButton index={0} />
-			<WaButton index={1} variant="secondary" />
+			<WaButton />
 		</div>
 	</section>
 

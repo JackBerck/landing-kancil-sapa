@@ -51,6 +51,22 @@ must('kontak.html', 'Mal Pelayanan Publik (MPP) Cilacap');
 must('kontak.html', 'Jumat 08.00 sampai 16.30 WIB');
 mustNot('kontak.html', 'CEK#');
 
+// Hanya satu nomor WhatsApp resmi (nomor kedua bukan milik Imigrasi): tidak boleh muncul di halaman, tautan wa.me, maupun JSON-LD.
+for (const page of [
+	'index.html',
+	'kontak.html',
+	'faq.html',
+	'tentang.html',
+	'layanan.html',
+	'pengaduan.html',
+	'privasi.html'
+]) {
+	const raw = html(page);
+	for (const needle of ['0851-8454-2256', '085184542256', '6285184542256'])
+		if (raw.includes(needle)) failures.push(`${page}: masih memuat nomor kedua "${needle}"`);
+	mustNot(page, 'dua nomor');
+}
+
 // Tentang dan privasi.
 mustNot('tentang.html', 'Bot tidak mengecek status permohonan paspor');
 mustNot('tentang.html', 'langkah lampiran pengaduan');

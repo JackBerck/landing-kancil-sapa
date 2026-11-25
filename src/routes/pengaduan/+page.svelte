@@ -61,8 +61,7 @@
 			Pengaduan ditangani langsung oleh petugas {site.office}, di chat yang sama.
 		</p>
 		<div class="actions">
-			<WaButton index={0} text="Halo, saya ingin menyampaikan pengaduan" />
-			<WaButton index={1} variant="secondary" text="Halo, saya ingin menyampaikan pengaduan" />
+			<WaButton text="Halo, saya ingin menyampaikan pengaduan" />
 		</div>
 	</div>
 
